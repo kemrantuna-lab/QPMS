@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="QPMS.Module.BusinessObjects.Company" Index="1000" ImageName="BO_Organization" />
+    <Class Name="QPMS.Module.BusinessObjects.Branch" Index="2000" DefaultDetailViewImage="Business_Diagram" ImageName="Business_Diagram" />
+    <Class Name="QPMS.Module.BusinessObjects.BranchLocation" Index="2001" ImageName="CustomerQuickLocations" />
+    <Class Name="QPMS.Module.BusinessObjects.BranchAnalysisDaily" Index="2002" ImageName="SalesAnalysis" />
+    <Class Name="QPMS.Module.BusinessObjects.BranchExpense" ImageName="Travel_CurrencyExchange" />
+    <Class Name="QPMS.Module.BusinessObjects.BranchTimesheet" ImageName="ShowWorkTimeOnly" />
+    <Class Name="QPMS.Module.BusinessObjects.BTF" ImageName="TaskList" />
+    <Class Name="QPMS.Module.BusinessObjects.Car" ImageName="Travel_Car" />
+    <Class Name="QPMS.Module.BusinessObjects.CompanyAbsence" ImageName="State_Priority_High" />
+    <Class Name="QPMS.Module.BusinessObjects.CompanyMobilePhone" ImageName="Electronics_PhoneAndroid" />
+    <Class Name="QPMS.Module.BusinessObjects.CompanyOffice" ImageName="CustomerQuickLocations" />
+    <Class Name="QPMS.Module.BusinessObjects.CompanyPresence" ImageName="State_Priority_Normal" />
+    <Class Name="QPMS.Module.BusinessObjects.CostCenter" ImageName="CostAnalysis" />
+    <Class Name="QPMS.Module.BusinessObjects.Cur" ImageName="Currency" />
+    <Class Name="QPMS.Module.BusinessObjects.Customer" ImageName="Customers" />
+    <Class Name="QPMS.Module.BusinessObjects.Department" ImageName="BO_Department" />
+    <Class Name="QPMS.Module.BusinessObjects.Documentation" ImageName="BO_Document" />
+    <Class Name="QPMS.Module.BusinessObjects.EmployeeFile" ImageName="BO_FileAttachment" />
+    <Class Name="QPMS.Module.BusinessObjects.EmployeeForm" ImageName="format2" />
+    <Class Name="QPMS.Module.BusinessObjects.Failure" ImageName="Action_Bell" />
+    <Class Name="QPMS.Module.BusinessObjects.FailureMode" ImageName="Security_WarningCircled2" />
+    <Class Name="QPMS.Module.BusinessObjects.MyExcel" ImageName="PrintActiveSheets" />
+    <Class Name="QPMS.Module.BusinessObjects.MyWord" ImageName="RichEditBookmark" />
+    <Class Name="QPMS.Module.BusinessObjects.Part" ImageName="Properties" />
+    <Class Name="QPMS.Module.BusinessObjects.Project" ImageName="BO_Project" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectAnalysisDaily" ImageName="SalesAnalysis" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectDocument" ImageName="BO_Document" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectEndInfo" ImageName="Action_Debug_Breakpoint_Toggle" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectExcel" ImageName="CalculateSheet" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectExpense" ImageName="CostAnalysis" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectFile" ImageName="BO_Document" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectLocation" ImageName="CustomerQuickLocations" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectRisk" ImageName="Logical" />
+    <Class Name="QPMS.Module.BusinessObjects.ProjectTimesheet" ImageName="EditDateTimePeriods" />
+    <Class Name="QPMS.Module.BusinessObjects.PTF" ImageName="ListViewAppointment" />
+    <Class Name="QPMS.Module.BusinessObjects.Traceability" ImageName="ModelEditor_DashboardView_32x32" />
+  </BOModel>
+  <NavigationItems DefaultChildItemsDisplayStyle="List" NavigationStyle="Accordion" RootGroupsStyle="Standard" />
+  <Options FormStyle="Ribbon" EnableHtmlFormatting="True" UIType="TabbedMDI">
+    <PrintingSettings PaperKind="A4" Landscape="True" />
+    <RibbonOptions RibbonControlStyle="Office2019" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="22.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Project_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item15">
+              <LayoutGroup Id="Project" Direction="Vertical">
+                <LayoutGroup Id="Project_col1" RelativeSize="100">
+                  <LayoutItem Id="State" RelativeSize="6.101694915254237" />
+                  <LayoutItem Id="Company" RelativeSize="4.406779661016949" />
+                  <LayoutItem Id="Customer" RelativeSize="4.406779661016949" />
+                  <LayoutItem Id="Branch" RelativeSize="4.406779661016949" />
+                  <LayoutItem Id="Code" RelativeSize="4.406779661016949" />
+                  <LayoutItem Id="Name" RelativeSize="4.406779661016949" />
+                  <LayoutGroup Id="Auto97c28b58-e3e0-4818-9d42-1aac015201e6" ShowCaption="False" Caption="" Direction="Horizontal" Index="6" RelativeSize="8.1355932203389827" IsNewNode="True">
+                    <LayoutItem Id="Start" ViewItem="Start" CaptionLocation="Top" Index="0" RelativeSize="47.920792079207921" IsNewNode="True" />
+                    <LayoutItem Id="End" ViewItem="End" CaptionLocation="Top" Index="1" RelativeSize="52.079207920792079" IsNewNode="True" />
+                  </LayoutGroup>
+                  <TabbedGroup Id="Item4" CaptionLocation="Top" Index="7" RelativeSize="63.728813559322035" IsNewNode="True">
+                    <LayoutGroup Id="Item2" ShowCaption="True" Caption="Results" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                      <LayoutItem Id="OK" ViewItem="OK" Index="0" RelativeSize="10.909090909090908" IsNewNode="True" />
+                      <LayoutItem Id="NOK" ViewItem="NOK" Index="1" RelativeSize="7.8787878787878789" IsNewNode="True" />
+                      <LayoutItem Id="ROK" ViewItem="ROK" Index="2" RelativeSize="7.8787878787878789" IsNewNode="True" />
+                      <LayoutItem Id="RNOK" ViewItem="RNOK" Index="3" RelativeSize="7.8787878787878789" IsNewNode="True" />
+                      <LayoutItem Id="TOTAL" ViewItem="TOTAL" Index="4" RelativeSize="65.454545454545453" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item1" ShowCaption="True" Caption="Activity Summary" CaptionLocation="Top" Index="1" RelativeSize="100" IsNewNode="True">
+                      <LayoutItem Id="TPTF" ViewItem="TPTF" Index="0" RelativeSize="10.909090909090908" IsNewNode="True" />
+                      <LayoutItem Id="TParts" ViewItem="TParts" Index="1" RelativeSize="7.8787878787878789" IsNewNode="True" />
+                      <LayoutItem Id="TFailureModes" ViewItem="TFailureModes" Index="2" RelativeSize="7.8787878787878789" IsNewNode="True" />
+                      <LayoutItem Id="TFailures" ViewItem="TFailures" Index="3" RelativeSize="7.8787878787878789" IsNewNode="True" />
+                      <LayoutItem Id="TTimesheets" ViewItem="TTimesheets" Index="4" RelativeSize="7.8787878787878789" IsNewNode="True" />
+                      <LayoutItem Id="TTraces" ViewItem="TTraces" Index="5" RelativeSize="7.8787878787878789" IsNewNode="True" />
+                      <LayoutItem Id="TInvoices" ViewItem="TInvoices" Index="6" RelativeSize="49.696969696969695" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item16" ShowCaption="True" Caption="Work Order" CaptionLocation="Top" Index="2" RelativeSize="100" IsNewNode="True">
+                      <LayoutItem Id="WorkOrder" TextAlignMode="AutoSize" ViewItem="WorkOrder" Index="0" RelativeSize="100" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item17" ShowCaption="True" Caption="Project Photo" CaptionLocation="Top" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
+                      <LayoutItem Id="Photo" ShowCaption="False" TextAlignMode="AutoSize" ViewItem="Photo" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True" />
+                    </LayoutGroup>
+                  </TabbedGroup>
+                  <LayoutItem Id="End" RelativeSize="4.406779661016949" Removed="True" />
+                  <LayoutItem Id="Start" RelativeSize="4.406779661016949" Removed="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Project_col2" RelativeSize="64.675984752223627" Removed="True">
+                  <TabbedGroup Id="Item3" Removed="True">
+                    <LayoutGroup Id="Item1" Index="0" Removed="True">
+                      <LayoutItem Id="TFailureModes" RelativeSize="4.7970479704797047" />
+                      <LayoutItem Id="TFailures" RelativeSize="4.7970479704797047" />
+                      <LayoutItem Id="TInvoices" RelativeSize="69.741697416974176" />
+                      <LayoutItem Id="TParts" RelativeSize="4.7970479704797047" />
+                      <LayoutItem Id="TPTF" RelativeSize="6.2730627306273066" />
+                      <LayoutItem Id="TTimesheets" RelativeSize="4.7970479704797047" />
+                      <LayoutItem Id="TTraces" RelativeSize="4.7970479704797047" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item16" Index="0" Removed="True">
+                      <LayoutItem Id="WorkOrder" TextAlignMode="AutoSize" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item17" TextAlignMode="AlignWithChildren" Index="0" Removed="True">
+                      <LayoutItem Id="Photo" TextAlignMode="AutoSize" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item2" Removed="True" />
+                  </TabbedGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item18">
+                <LayoutItem Id="Main" RelativeSize="9.8305084745762716" />
+                <LayoutGroup Id="SubProjects" TextAlignMode="AlignWithChildren" RelativeSize="90.169491525423723" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item5">
+                <TabbedGroup Id="Item8">
+                  <LayoutGroup Id="Parts" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Parts" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="FailureModes" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="FailureModes" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="TimesheetTypes" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="TimesheetTypes" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Locations" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Locations" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Risks" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Risks" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Members" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Members" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Files" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Files" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Users" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Users" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item11">
+                <TabbedGroup Id="Item12">
+                  <LayoutGroup Id="PTFs" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="PTFs" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Timesheets" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Timesheets" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Traceabilities" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Traceabilities" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Failures" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Failures" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Notes" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Notes" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Docs" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Docs" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Excels" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Excels" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item9">
+                <TabbedGroup Id="Item10">
+                  <LayoutGroup Id="Expenses" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Expenses" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Invoices" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Invoices" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Documentation" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Documentation" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item13">
+                <TabbedGroup Id="Item14">
+                  <LayoutGroup Id="PDA" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="PDA" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Events" TextAlignMode="AlignWithChildren">
+                <LayoutItem Id="Events" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Project_DetailView_BranchReporting">
+      <Items>
+        <PropertyEditor Id="CSL" PropertyName="CSL" IsNewNode="True" />
+        <PropertyEditor Id="EH" PropertyName="EH" IsNewNode="True" />
+        <PropertyEditor Id="HH" PropertyName="HH" IsNewNode="True" />
+        <PropertyEditor Id="InvoiceProjectPeriods" PropertyName="InvoiceProjectPeriods" View="Project_InvoiceProjectPeriods_ListView" IsNewNode="True" />
+        <PropertyEditor Id="InvoiceState" PropertyName="InvoiceState" IsNewNode="True" />
+        <PropertyEditor Id="Language" PropertyName="Language" IsNewNode="True" />
+        <PropertyEditor Id="NH" PropertyName="NH" IsNewNode="True" />
+        <PropertyEditor Id="PEI" PropertyName="PEI" IsNewNode="True" />
+        <PropertyEditor Id="Report" PropertyName="Report" IsNewNode="True" />
+        <PropertyEditor Id="WorkInstruction" PropertyName="WorkInstruction" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item15">
+              <LayoutGroup Id="Project" Direction="Vertical">
+                <LayoutGroup Id="Project_col1" RelativeSize="100" Caption="Project_col1" Direction="Vertical">
+                  <LayoutGroup Id="Autoff91991a-daa8-4dd5-bce6-4c43b86112c5" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="37.36434108527132" IsNewNode="True">
+                    <LayoutGroup Id="Item25" ShowCaption="True" Caption="Project Related Information" CaptionLocation="Top" GroupStyle="Title" Index="0" RelativeSize="46.288906624102154" IsNewNode="True">
+                      <LayoutItem Id="State" ViewItem="State" Index="0" RelativeSize="17.821782178217823" IsNewNode="True" />
+                      <LayoutItem Id="Code" ViewItem="Code" Index="1" RelativeSize="12.871287128712872" IsNewNode="True" />
+                      <LayoutItem Id="Name" ViewItem="Name" Index="2" RelativeSize="12.871287128712872" IsNewNode="True" />
+                      <LayoutItem Id="Start" ViewItem="Start" Index="3" RelativeSize="12.871287128712872" IsNewNode="True" />
+                      <LayoutItem Id="End" ViewItem="End" Index="4" RelativeSize="12.871287128712872" IsNewNode="True" />
+                      <LayoutItem Id="CSL" ViewItem="CSL" Index="5" RelativeSize="12.871287128712872" IsNewNode="True" />
+                      <LayoutItem Id="Language" ViewItem="Language" Index="6" RelativeSize="17.821782178217823" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item24" ShowCaption="True" Caption="Organizational Information Of Project" CaptionLocation="Top" GroupStyle="Title" Index="1" RelativeSize="53.711093375897846" IsNewNode="True">
+                      <LayoutItem Id="Company" ViewItem="Company" Index="0" RelativeSize="17.821782178217823" IsNewNode="True" />
+                      <LayoutItem Id="Customer" ViewItem="Customer" Index="1" RelativeSize="12.871287128712872" IsNewNode="True" />
+                      <LayoutItem Id="Branch" ViewItem="Branch" Index="2" RelativeSize="69.3069306930693" IsNewNode="True" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                  <LayoutItem Id="State" ViewItem="State" Index="0" RelativeSize="4.7182175622542593" Removed="True" />
+                  <LayoutGroup Id="Item23" ShowCaption="True" Caption="Details" CaptionLocation="Top" GroupStyle="Title" Index="1" RelativeSize="62.63565891472868" IsNewNode="True">
+                    <TabbedGroup Id="Item3" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                      <LayoutGroup Id="Item2" ShowCaption="True" Caption="Results" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                        <LayoutGroup Id="Item6" ShowCaption="True" Caption="Activity" CaptionLocation="Top" GroupStyle="Title" Index="0" RelativeSize="35.922330097087375" IsNewNode="True">
+                          <LayoutGroup Id="Auto6c60d487-8dcb-4c32-a426-fefa52a07b9a" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="50" IsNewNode="True">
+                            <LayoutItem Id="OK" ViewItem="OK" Index="0" RelativeSize="20.101781170483459" IsNewNode="True" />
+                            <LayoutItem Id="NOK" ViewItem="NOK" Index="1" RelativeSize="21.119592875318066" IsNewNode="True" />
+                            <LayoutItem Id="ROK" ViewItem="ROK" Index="2" RelativeSize="29.346904156064461" IsNewNode="True" />
+                            <LayoutItem Id="RNOK" ViewItem="RNOK" Index="3" RelativeSize="29.431721798134014" IsNewNode="True" />
+                          </LayoutGroup>
+                          <LayoutItem Id="TOTAL" ViewItem="TOTAL" Index="1" RelativeSize="50" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Item19" ShowCaption="True" Caption="Time" CaptionLocation="Top" GroupStyle="Title" Index="1" RelativeSize="64.077669902912618" IsNewNode="True">
+                          <LayoutItem Id="Hours" ViewItem="Hours" Index="0" RelativeSize="22.641509433962263" IsNewNode="True" />
+                          <LayoutGroup Id="Auto69a3c222-5703-49a4-b189-e7fa0f81140d" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="77.35849056603773" IsNewNode="True">
+                            <LayoutItem Id="NH" ViewItem="NH" Index="0" RelativeSize="28.159457167090753" IsNewNode="True" />
+                            <LayoutItem Id="EH" ViewItem="EH" Index="1" RelativeSize="35.877862595419849" IsNewNode="True" />
+                            <LayoutItem Id="HH" ViewItem="HH" Index="2" RelativeSize="35.9626802374894" IsNewNode="True" />
+                          </LayoutGroup>
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutGroup Id="Item22" ShowCaption="True" Caption="Report" CaptionLocation="Top" Index="1" RelativeSize="100" IsNewNode="True">
+                        <LayoutItem Id="Report" ViewItem="Report" CaptionLocation="Top" SizeConstraintsType="Custom" MinSize="159, 29" Index="0" RelativeSize="100" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Item1" ShowCaption="True" Caption="Activity Summary" CaptionLocation="Top" Index="2" RelativeSize="100" IsNewNode="True">
+                        <LayoutItem Id="TPTF" ViewItem="TPTF" Index="0" RelativeSize="11.650485436893204" IsNewNode="True" />
+                        <LayoutItem Id="TParts" ViewItem="TParts" Index="1" RelativeSize="8.4142394822006477" IsNewNode="True" />
+                        <LayoutItem Id="TFailureModes" ViewItem="TFailureModes" Index="2" RelativeSize="8.4142394822006477" IsNewNode="True" />
+                        <LayoutItem Id="TFailures" ViewItem="TFailures" Index="3" RelativeSize="8.4142394822006477" IsNewNode="True" />
+                        <LayoutItem Id="TTimesheets" ViewItem="TTimesheets" Index="4" RelativeSize="8.4142394822006477" IsNewNode="True" />
+                        <LayoutItem Id="TTraces" ViewItem="TTraces" Index="5" RelativeSize="8.4142394822006477" IsNewNode="True" />
+                        <LayoutItem Id="TInvoices" ViewItem="TInvoices" Index="6" RelativeSize="8.4142394822006477" IsNewNode="True" />
+                        <LayoutItem Id="THours" ViewItem="THours" Index="7" RelativeSize="37.864077669902912" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Item16" ShowCaption="True" Caption="Work Order" CaptionLocation="Top" Index="3" RelativeSize="100" IsNewNode="True">
+                        <LayoutItem Id="WorkOrder" TextAlignMode="AutoSize" ViewItem="WorkOrder" Index="0" RelativeSize="100" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Item4" ShowCaption="True" Caption="Work Instruction" CaptionLocation="Top" Index="4" RelativeSize="100" IsNewNode="True">
+                        <LayoutItem Id="WorkInstruction" ViewItem="WorkInstruction" Index="0" RelativeSize="100" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Item17" ShowCaption="True" Caption="Project Photo" CaptionLocation="Top" TextAlignMode="AlignWithChildren" Index="5" RelativeSize="100" IsNewNode="True">
+                        <LayoutItem Id="Photo" ShowCaption="False" TextAlignMode="AutoSize" ViewItem="Photo" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True" />
+                      </LayoutGroup>
+                    </TabbedGroup>
+                  </LayoutGroup>
+                  <LayoutItem Id="Code" ViewItem="Code" Index="2" RelativeSize="3.6414565826330532" Removed="True" />
+                  <LayoutItem Id="Company" RelativeSize="4.0372670807453419" Index="2" Removed="True" />
+                  <LayoutItem Id="Customer" RelativeSize="4.0372670807453419" Index="3" Removed="True" />
+                  <LayoutItem Id="Name" ViewItem="Name" Index="3" RelativeSize="3.6414565826330532" Removed="True" />
+                  <LayoutItem Id="Branch" RelativeSize="4.0372670807453419" Index="4" Removed="True" />
+                  <LayoutItem Id="Start" RelativeSize="4.0372670807453419" Index="7" Removed="True" />
+                  <LayoutItem Id="End" RelativeSize="4.0372670807453419" Index="8" Removed="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Project_col2" RelativeSize="55.706304868316039" Index="2" Removed="True">
+                  <TabbedGroup Id="Item3" Removed="True">
+                    <LayoutGroup Id="Item1">
+                      <LayoutItem Id="THours" ViewItem="THours" Index="7" RelativeSize="67.34693877551021" IsNewNode="True" />
+                      <LayoutItem Id="TFailureModes" RelativeSize="4.4217687074829932" />
+                      <LayoutItem Id="TFailures" RelativeSize="4.4217687074829932" />
+                      <LayoutItem Id="TInvoices" RelativeSize="4.4217687074829932" />
+                      <LayoutItem Id="TParts" RelativeSize="4.4217687074829932" />
+                      <LayoutItem Id="TPTF" RelativeSize="6.1224489795918364" />
+                      <LayoutItem Id="TTimesheets" RelativeSize="4.4217687074829932" />
+                      <LayoutItem Id="TTraces" RelativeSize="4.4217687074829932" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item16">
+                      <LayoutItem Id="WorkOrder" TextAlignMode="AutoSize" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item17" TextAlignMode="AlignWithChildren">
+                      <LayoutItem Id="Photo" TextAlignMode="AutoSize" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item2">
+                      <LayoutGroup Id="Item6" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="32.142857142857146" Caption="Activity" GroupStyle="Title" IsNewNode="True">
+                        <LayoutItem Id="OK" ViewItem="OK" Index="0" RelativeSize="24" IsNewNode="True" />
+                        <LayoutItem Id="NOK" ViewItem="NOK" Index="1" RelativeSize="17.333333333333332" IsNewNode="True" />
+                        <LayoutItem Id="ROK" ViewItem="ROK" Index="2" RelativeSize="17.333333333333332" IsNewNode="True" />
+                        <LayoutItem Id="RNOK" ViewItem="RNOK" Index="3" RelativeSize="17.333333333333332" IsNewNode="True" />
+                        <LayoutItem Id="TOTAL" ViewItem="TOTAL" Index="4" RelativeSize="24" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Item19" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="67.857142857142861" Caption="Time" GroupStyle="Title" IsNewNode="True">
+                        <LayoutItem Id="Hours" ViewItem="Hours" Index="0" RelativeSize="10" IsNewNode="True" />
+                        <LayoutItem Id="NH" ViewItem="NH" Index="1" RelativeSize="7.2222222222222223" IsNewNode="True" />
+                        <LayoutItem Id="EH" ViewItem="EH" Index="2" RelativeSize="7.2222222222222223" IsNewNode="True" />
+                        <LayoutItem Id="HH" ViewItem="HH" Index="3" RelativeSize="75.555555555555557" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutItem Id="NOK" RelativeSize="4.4142614601018675" Removed="True" />
+                      <LayoutItem Id="OK" RelativeSize="6.1120543293718166" Removed="True" />
+                      <LayoutItem Id="RNOK" RelativeSize="4.4142614601018675" Removed="True" />
+                      <LayoutItem Id="ROK" RelativeSize="4.4142614601018675" Removed="True" />
+                      <LayoutItem Id="TOTAL" RelativeSize="80.645161290322577" Removed="True" />
+                    </LayoutGroup>
+                  </TabbedGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item18">
+                <LayoutItem Id="Main" RelativeSize="8.9922480620155039" />
+                <LayoutGroup Id="SubProjects" TextAlignMode="AlignWithChildren" RelativeSize="91.0077519379845">
+                  <LayoutItem Id="SubProjects" RelativeSize="100" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item5">
+                <TabbedGroup Id="Item8">
+                  <LayoutGroup Id="Parts" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Parts" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="FailureModes" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="FailureModes" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="TimesheetTypes" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="TimesheetTypes" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Locations" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Locations" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Risks" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Risks" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Members" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Members" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Files" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Files" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Users" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Users" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item11">
+                <TabbedGroup Id="Item12">
+                  <LayoutGroup Id="PTFs" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="PTFs" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Timesheets" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Timesheets" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Traceabilities" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Traceabilities" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Failures" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Failures" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Notes" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Notes" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Docs" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Docs" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Excels" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Excels" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item9">
+                <LayoutItem Id="InvoiceState" ViewItem="InvoiceState" Index="0" RelativeSize="5.5813953488372094" IsNewNode="True" />
+                <LayoutItem Id="ExpensesTotal" ViewItem="ExpensesTotal" Index="1" RelativeSize="4.0310077519379846" IsNewNode="True" />
+                <TabbedGroup Id="Item10" Index="2" RelativeSize="90.3875968992248">
+                  <LayoutGroup Id="Expenses" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Expenses" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Invoices" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="Invoices" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item20" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" Caption="Invoice Periods" TextAlignMode="AlignWithChildren" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="InvoiceProjectPeriods" ViewItem="InvoiceProjectPeriods" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Documentation" TextAlignMode="AlignWithChildren" Index="3">
+                    <LayoutItem Id="Documentation" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item13">
+                <TabbedGroup Id="Item14">
+                  <LayoutGroup Id="PDA" TextAlignMode="AlignWithChildren">
+                    <LayoutItem Id="PDA" TextAlignMode="AutoSize" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Events" TextAlignMode="AlignWithChildren">
+                <LayoutItem Id="Events" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item7" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="7" Caption="Project End Information" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="PEI" ViewItem="PEI" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item21" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="8" Caption="Record Details" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="CreatedBy" ViewItem="CreatedBy" Index="0" RelativeSize="5.5813953488372094" IsNewNode="True" />
+                <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="1" RelativeSize="4.0310077519379846" IsNewNode="True" />
+                <LayoutItem Id="UpdatedBy" ViewItem="UpdatedBy" Index="2" RelativeSize="4.0310077519379846" IsNewNode="True" />
+                <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="3" RelativeSize="4.0310077519379846" IsNewNode="True" />
+                <LayoutItem Id="Version" ViewItem="Version" Index="4" RelativeSize="4.0310077519379846" IsNewNode="True" />
+                <LayoutItem Id="HasUpdate" ViewItem="HasUpdate" Index="5" RelativeSize="78.294573643410857" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Project_Events_ListView">
+      <Columns>
+        <ColumnInfo Id="Subject" Width="82" />
+        <ColumnInfo Id="StartOn" Width="145" />
+        <ColumnInfo Id="EndOn" Width="145" />
+        <ColumnInfo Id="RecurrencePattern" Width="134" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ProjectDocument_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="18.831168831168831">
+            <LayoutGroup Id="ProjectDocument" TextAlignMode="UseParentOptions" Direction="Vertical">
+              <LayoutGroup Id="Auto41afed5b-9e0c-4a4d-9f42-b498ec2447fb" Caption="Auto41afed5b-9e0c-4a4d-9f42-b498ec2447fb(4)" RelativeSize="100">
+                <LayoutGroup Id="Auto5a540249-975c-40ed-9783-b52d8ca06cb3" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="49.931787175989086" IsNewNode="True" />
+                  <LayoutItem Id="Project" ViewItem="Project" Index="1" RelativeSize="50.068212824010914" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Subject" ViewItem="Subject" Index="1" RelativeSize="50" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Code" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="Project" RelativeSize="26.530612244897959" Removed="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Photo" Index="1" RelativeSize="42.837653478854023" CaptionLocation="Top" ShowCaption="False" Removed="True" />
+              <LayoutGroup Id="ProjectDocument_col1" Index="1" RelativeSize="22.783083219645292" Removed="True" />
+              <LayoutGroup Id="ProjectDocument_col2" Caption="Photo" Index="3" RelativeSize="23.601637107776263" Removed="True">
+                <LayoutItem Id="Photo" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Text_Group" ShowCaption="False" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="81.168831168831176" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ProjectExcel_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="7.1428571428571432">
+            <LayoutGroup Id="ProjectExcel">
+              <LayoutGroup Id="Auto8929a371-b588-48bb-9762-a9141652db37" Caption="Auto8929a371-b588-48bb-9762-a9141652db37(4)" Direction="Horizontal" RelativeSize="100">
+                <LayoutItem Id="Project" RelativeSize="49.934123847167328" />
+                <LayoutItem Id="Subject" ViewItem="Subject" Index="1" RelativeSize="50.065876152832672" IsNewNode="True" />
+                <LayoutItem Id="Photo" Removed="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Subject" RelativeSize="43.589743589743591" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Data_Group" ShowCaption="False" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="92.857142857142861">
+            <LayoutItem Id="Data" Index="0" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

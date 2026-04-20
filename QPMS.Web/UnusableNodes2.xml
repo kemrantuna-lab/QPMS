@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="BranchTimesheetEndHourPropertyWrapper_ListView" PageSize="25" />
+    <ListView Id="BranchTimesheetEndHourPropertyWrapper_LookupListView" PageSize="25" />
+    <ListView Id="BranchTimesheetEndMinutePropertyWrapper_ListView" PageSize="61" />
+    <ListView Id="BranchTimesheetEndMinutePropertyWrapper_LookupListView" PageSize="61" />
+    <ListView Id="BranchTimesheetStartHourPropertyWrapper_ListView" PageSize="25" />
+    <ListView Id="BranchTimesheetStartHourPropertyWrapper_LookupListView" PageSize="25" />
+    <ListView Id="BranchTimesheetStartMinutePropertyWrapper_ListView" PageSize="61" />
+    <ListView Id="BranchTimesheetStartMinutePropertyWrapper_LookupListView" PageSize="61" />
+  </Views>
+</Application>

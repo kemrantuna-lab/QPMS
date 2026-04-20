@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerAspNetModule" Version="22.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="22.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemAspNetModule" Version="22.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Project_DetailView">
+      <Items>
+        <PropertyEditor Id="Excels" LinkView="" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item15">
+              <LayoutGroup Id="Project">
+                <LayoutGroup Id="Project_col1" RelativeSize="73.455598455598462">
+                  <LayoutGroup Id="Item25" RelativeSize="28.366013071895424" />
+                  <LayoutGroup Id="Item23" RelativeSize="11.633986928104575" />
+                  <LayoutGroup Id="Item22" RelativeSize="17.908496732026144" />
+                  <LayoutGroup Id="Item24" RelativeSize="42.091503267973856">
+                    <LayoutItem Id="WorkInstruction" RelativeSize="11.072664359861591" />
+                    <LayoutItem Id="WorkOrder" RelativeSize="88.927335640138409" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Project_col2" RelativeSize="26.544401544401545">
+                  <TabbedGroup Id="Item3">
+                    <LayoutGroup Id="Item2">
+                      <LayoutGroup Id="Item16" RelativeSize="23.537604456824514" />
+                      <LayoutGroup Id="Item21" RelativeSize="76.462395543175489">
+                        <LayoutItem Id="NH" RelativeSize="6.2015503875969" />
+                        <LayoutItem Id="EH" RelativeSize="4.6511627906976747" />
+                        <LayoutItem Id="HH" RelativeSize="4.6511627906976747" />
+                        <LayoutItem Id="Hours" RelativeSize="84.496124031007753" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item26">
+                      <LayoutItem Id="TotalMealsQuantity" RelativeSize="4.4568245125348191" />
+                      <LayoutItem Id="TotalMealPrice" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="TotalKMPrice" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="TotalKM" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="ProjectCostsTotal" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="GrandTotal" RelativeSize="82.172701949860723" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item1">
+                      <LayoutItem Id="THours" RelativeSize="4.4568245125348191" />
+                      <LayoutItem Id="TPTF" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="TParts" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="TFailureModes" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="TFailures" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="TTimesheets" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="TTraces" RelativeSize="3.3426183844011144" />
+                      <LayoutItem Id="TInvoices" RelativeSize="75.4874651810585" />
+                    </LayoutGroup>
+                  </TabbedGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item18">
+                <LayoutItem Id="Main" RelativeSize="6.2745098039215685" />
+                <LayoutGroup Id="SubProjects" RelativeSize="93.725490196078425" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item9">
+                <TabbedGroup Id="Item10">
+                  <LayoutGroup Id="Expenses">
+                    <LayoutItem Id="ExpensesTotal" RelativeSize="4.3775649794801641" />
+                    <LayoutItem Id="Expenses" RelativeSize="95.622435020519831" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item19">
+                <LayoutItem Id="Oid" RelativeSize="4.1830065359477127" />
+                <LayoutItem Id="CreatedBy" RelativeSize="3.1372549019607843" />
+                <LayoutItem Id="CreatedOn" RelativeSize="3.1372549019607843" />
+                <LayoutItem Id="HasUpdate" RelativeSize="3.0065359477124183" />
+                <LayoutItem Id="UpdatedBy" RelativeSize="3.1372549019607843" />
+                <LayoutItem Id="UpdatedOn" RelativeSize="3.1372549019607843" />
+                <LayoutItem Id="Version" RelativeSize="80.261437908496731" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Project_DetailView_BranchReporting">
+      <Items>
+        <PropertyEditor Id="Timesheets" View="Project_Timesheets_ListView_BranchReporting" />
+      </Items>
+    </DetailView>
+    <ListView Id="Project_PDA_ListView">
+      <Columns>
+        <ColumnInfo Id="Date" SortIndex="0" SortOrder="Descending" />
+        <ColumnInfo Id="OK" Width="40" />
+        <ColumnInfo Id="NOK" Width="48" />
+        <ColumnInfo Id="ROK" Width="48" />
+        <ColumnInfo Id="RNOK" Width="56" />
+        <ColumnInfo Id="TimesheetDurationMinutes" Width="53" />
+      </Columns>
+    </ListView>
+    <ListView Id="Project_PTFs_ListView">
+      <Columns>
+        <ColumnInfo Id="Name" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="Date" SortIndex="0" SortOrder="Descending" />
+      </Columns>
+    </ListView>
+    <ListView Id="Project_Timesheets_ListView_BranchReporting" ClassName="QPMS.Module.BusinessObjects.ProjectTimesheet" DataAccessMode="Client" InlineEditMode="Inline" IsAdaptive="False" AllowUnlink="False" AllowLink="False" IsGroupPanelVisible="True" NewItemRowPosition="Top" MasterDetailView="" DetailViewID="" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="CreatedBy" PropertyName="CreatedBy" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="CreatedOn" PropertyName="CreatedOn" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="EndDT" PropertyName="EndDT" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="HasUpdate" PropertyName="HasUpdate" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Project" PropertyName="Project" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="StartDT" PropertyName="StartDT" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="UpdatedBy" PropertyName="UpdatedBy" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="UpdatedOn" PropertyName="UpdatedOn" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Version" PropertyName="Version" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Code" PropertyName="Code" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Date" PropertyName="Date" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="PTF" PropertyName="PTF" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="ProjectTimesheetType" PropertyName="ProjectTimesheetType" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="Location" PropertyName="Location" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Employee" PropertyName="Employee" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="SH" PropertyName="SH" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="SM" PropertyName="SM" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="EH" PropertyName="EH" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="EM" PropertyName="EM" Index="9" IsNewNode="True" />
+        <ColumnInfo Id="Hours" PropertyName="Hours" Index="10" IsNewNode="True" />
+        <ColumnInfo Id="Minutes" PropertyName="Minutes" Index="11" IsNewNode="True" />
+        <ColumnInfo Id="TF" PropertyName="TF" Index="12" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ProjectDocument_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" Caption="Word" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Text" ViewItem="Text" Index="0" RelativeSize="100" CaptionLocation="Top" ShowCaption="False" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ProjectDocument" ShowCaption="True" Index="1" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Auto41afed5b-9e0c-4a4d-9f42-b498ec2447fb" ShowCaption="False" Caption="Auto41afed5b-9e0c-4a4d-9f42-b498ec2447fb(4)" Index="0" RelativeSize="16.428571428571427" IsNewNode="True">
+                  <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="39.130434782608695" IsNewNode="True" />
+                  <LayoutItem Id="Project" ViewItem="Project" Index="1" RelativeSize="28.260869565217391" IsNewNode="True" />
+                  <LayoutItem Id="Subject" ViewItem="Subject" Index="2" RelativeSize="32.608695652173914" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="ProjectDocument_col1" ShowCaption="False" Index="1" RelativeSize="83.571428571428569" IsNewNode="True">
+                  <LayoutGroup Id="Autoc6b6b105-0a9f-4e3f-a598-662d2b3793ab" ShowCaption="False" Caption="Autoc6b6b105-0a9f-4e3f-a598-662d2b3793ab(9)" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Photo" ViewItem="Photo" Index="0" RelativeSize="100" CaptionLocation="Top" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="ProjectDocument" RelativeSize="100" Direction="Vertical" Removed="True">
+              <LayoutGroup Id="ProjectDocument_col1" RelativeSize="100" Caption="ProjectDocument_col1">
+                <LayoutGroup Id="Autoc6b6b105-0a9f-4e3f-a598-662d2b3793ab" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="10.973451327433628" IsNewNode="True">
+                  <LayoutGroup Id="Auto964b0d44-6a80-448f-9b35-a1ec3eb301d4" ShowCaption="False" Caption="" Index="0" RelativeSize="61.801242236024848" IsNewNode="True">
+                    <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="58.064516129032256" IsNewNode="True" />
+                    <LayoutItem Id="Project" ViewItem="Project" Index="1" RelativeSize="41.935483870967744" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Photo" ViewItem="Photo" Index="1" RelativeSize="38.198757763975152" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Text" ViewItem="Text" Index="2" RelativeSize="84.424778761061944" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ProjectDocument_col2" Direction="Vertical" RelativeSize="7.49063670411985" Caption="ProjectDocument_col2" Removed="True">
+                <LayoutItem Id="Photo" Index="0" RelativeSize="72.8744939271255" Removed="True" />
+                <LayoutItem Id="Text" Index="0" RelativeSize="100" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Text_Group" ShowCaption="False" Index="1" RelativeSize="45.941558441558442" Caption="Text" Removed="True">
+            <LayoutItem Id="Text" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ProjectExcel_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ProjectExcel" RelativeSize="100" Caption="ProjectExcel">
+              <LayoutGroup Id="Auto29eff986-1725-42da-bfbb-b46602a926f2" ShowCaption="False" Caption="Auto29eff986-1725-42da-bfbb-b46602a926f2(4)" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <TabbedGroup Id="Item2" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" Caption="Excel" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Data" ShowCaption="False" ViewItem="Data" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="100" Caption="Details" IsNewNode="True">
+                    <LayoutGroup Id="Auto1fcb5c84-68b9-41be-8aef-67aa09cc4605" ShowCaption="False" Caption="" Index="0" RelativeSize="55.729794933655008" IsNewNode="True">
+                      <LayoutItem Id="Project" ViewItem="Project" Index="0" RelativeSize="6.4285714285714288" IsNewNode="True" />
+                      <LayoutItem Id="Subject" ViewItem="Subject" Index="1" RelativeSize="93.571428571428569" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutItem Id="Photo" ViewItem="Photo" Index="1" RelativeSize="44.270205066344992" IsNewNode="True" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Auto8929a371-b588-48bb-9762-a9141652db37" Caption="Auto8929a371-b588-48bb-9762-a9141652db37(9)" Direction="Horizontal" Index="1" RelativeSize="87.847222222222229" Removed="True">
+                <LayoutItem Id="Photo" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="Project" Removed="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Subject" RelativeSize="28.260869565217391" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Data_Group" ShowCaption="False" Index="1" RelativeSize="79.545454545454547" Caption="Data" Removed="True">
+            <LayoutItem Id="Data" Index="0" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

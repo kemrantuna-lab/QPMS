@@ -1,0 +1,27 @@
+# Visual Studio / .NET build output
+.vs/
+bin/
+obj/
+
+# NuGet restore output
+packages/
+
+# IDE and user-specific files
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs and caches
+*.log
+*.cache
+*.dtbcache.json
+
+# Backup and publish artifacts
+*.bak
+*.zip
+
+# Signing / machine-local secrets
+*_TemporaryKey.pfx
+*.pfx

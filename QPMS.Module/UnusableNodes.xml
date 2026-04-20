@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="QPMS.Module.BusinessObjects.Timesheet">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="CreatedBy" Index="-1" />
+        <Member Name="CreatedOn" Index="-1" />
+        <Member Name="UpdatedBy" Index="-1" />
+        <Member Name="UpdatedOn" Index="-1" />
+        <Member Name="Version" Index="-1" />
+        <Member Name="Date" Index="100" />
+        <Member Name="Project" Index="1000" />
+        <Member Name="PTF" Index="2000" />
+        <Member Name="User" Index="3000" DataSourceCriteria="[IsActive] = True" />
+        <Member Name="StartHourWrapper" Index="4000" />
+        <Member Name="StartMinuteWrapper" Index="4001" />
+        <Member Name="EndHourWrapper" Index="4002" />
+        <Member Name="EndMinuteWrapper" Index="4003" />
+        <Member Name="DHour" Index="10000" />
+        <Member Name="DMinute" Index="10000" />
+        <Member Name="Duration" Index="10000" />
+        <Member Name="EndTime" Index="10000" />
+        <Member Name="HasUpdate" Index="10000" />
+        <Member Name="StartTime" Index="10000" />
+        <Member Name="TF" Index="10000" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <ListView Id="Timesheet_ListView" AllowEdit="True" IsFooterVisible="True" IsGroupPanelVisible="True" NewItemRowPosition="Top" ShowAutoFilterRow="True" ShowFindPanel="True">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CreatedBy" Index="-1" />
+        <ColumnInfo Id="CreatedOn" Index="-1" />
+        <ColumnInfo Id="HasUpdate" Index="-1" />
+        <ColumnInfo Id="TF" Index="-1" />
+        <ColumnInfo Id="UpdatedBy" Index="-1" />
+        <ColumnInfo Id="UpdatedOn" Index="-1" />
+        <ColumnInfo Id="Version" Index="-1" />
+        <ColumnInfo Id="Project" Index="1000" />
+        <ColumnInfo Id="PTF" Index="2000" />
+        <ColumnInfo Id="Date" Index="3000" />
+        <ColumnInfo Id="User" Index="4000" />
+        <ColumnInfo Id="StartHourWrapper" Index="5000" />
+        <ColumnInfo Id="StartMinuteWrapper" Index="5001" />
+        <ColumnInfo Id="EndHourWrapper" Index="5002" />
+        <ColumnInfo Id="EndMinuteWrapper" Index="5003" />
+        <ColumnInfo Id="Duration" Index="9000" />
+        <ColumnInfo Id="DMinute" Index="9001" />
+        <ColumnInfo Id="DHour" Index="9002" />
+        <ColumnInfo Id="StartTime" Index="10000" />
+        <ColumnInfo Id="EndTime" Index="10001" />
+      </Columns>
+    </ListView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="BranchResponsible">
+        <Items Id="Items">
+          <Item Id="Timesheet_ListView_Copy" ViewId="Timesheet_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

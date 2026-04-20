@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="BranchTimesheet_ListView_BranchReporting">
+      <Columns Id="Columns">
+        <ColumnInfo Id="EndMinuteWrapper" PropertyName="EndMinuteWrapper" Index="9" />
+        <ColumnInfo Id="EndHourWrapper" PropertyName="EndHourWrapper" Index="8" />
+        <ColumnInfo Id="StartMinuteWrapper" PropertyName="StartMinuteWrapper" Index="7" />
+        <ColumnInfo Id="StartHourWrapper" PropertyName="StartHourWrapper" Index="6" />
+      </Columns>
+    </ListView>
+    <DetailView Id="BranchTimesheet_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="EndHourWrapper" LookupEditorMode="AllItems" />
+        <PropertyEditor Id="EndMinuteWrapper" LookupEditorMode="AllItems" />
+        <PropertyEditor Id="StartHourWrapper" LookupEditorMode="AllItems" />
+        <PropertyEditor Id="StartMinuteWrapper" LookupEditorMode="AllItems" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BranchTimesheet">
+              <LayoutGroup Id="BranchTimesheet_col2">
+                <LayoutItem Id="StartMinuteWrapper" Index="3" RelativeSize="4.8507462686567164" />
+                <LayoutItem Id="EndHourWrapper" Index="4" RelativeSize="4.8507462686567164" />
+                <LayoutItem Id="EndMinuteWrapper" Index="5" RelativeSize="73.880597014925371" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ProjectTimesheet_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item4">
+              <LayoutItem Id="EndMinuteWrapper" ViewItem="EndMinuteWrapper" />
+              <LayoutItem Id="EndHourWrapper" ViewItem="EndHourWrapper" />
+              <LayoutItem Id="StartMinuteWrapper" ViewItem="StartMinuteWrapper" />
+              <LayoutItem Id="StartHourWrapper" ViewItem="StartHourWrapper" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

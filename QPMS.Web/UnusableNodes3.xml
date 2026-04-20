@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="ProjectDocument_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ProjectDocument">
+              <LayoutGroup Id="ProjectDocument_col1">
+                <LayoutItem Id="Subject" RelativeSize="4.6017699115044248" Index="1" />
+                <LayoutItem Id="Code" RelativeSize="6.6055045871559637" Removed="True" />
+                <LayoutItem Id="Project" RelativeSize="4.7706422018348622" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ProjectExcel_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="XPObject" RelativeSize="84.415584415584419" Caption="Oid" Removed="True">
+              <LayoutItem Id="Oid" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ProjectExcel">
+              <LayoutItem Id="Data" RelativeSize="89.935064935064929" Index="1" CaptionLocation="Top" />
+              <LayoutItem Id="Photo" Removed="True" />
+              <LayoutItem Id="Project" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

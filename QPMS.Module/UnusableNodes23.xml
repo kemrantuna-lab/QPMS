@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Branch_DetailView_BranchReporting">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="Item8">
+              <TabbedGroup Id="Item9">
+                <LayoutGroup Id="BranchExpenses">
+                  <LayoutItem Id="BranchExpenses" ViewItem="BranchExpenses" />
+                </LayoutGroup>
+              </TabbedGroup>
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Branch_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="Item8">
+              <TabbedGroup Id="Item9">
+                <LayoutGroup Id="BranchExpenses">
+                  <LayoutItem Id="BranchExpenses" ViewItem="BranchExpenses" />
+                </LayoutGroup>
+              </TabbedGroup>
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="@3987f3a4-7c1f-49a2-a002-811da41288cf">
+        <Items Id="Items">
+          <Item Id="@8dfe3c59-ec42-4d50-b395-00c6cb68d65e">
+            <Items Id="Items">
+              <Item Id="BranchExpense_ListView" ViewId="BranchExpense_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

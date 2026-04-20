@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="Timesheet_ListView" InlineEditMode="Batch" NewItemRowPosition="Top" AllowEdit="True" ShowAutoFilterRow="True" ShowFindPanel="True" IsFooterVisible="True" IsGroupPanelVisible="True" IsAdaptive="True" />
+  </Views>
+</Application>

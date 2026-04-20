@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="ApplicationUser_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="Car" Caption="Assigned Company Car" />
+        <PropertyEditor Id="MonthlyHours" Caption="Monthly Hours of Work" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item4">
+              <LayoutGroup Id="ApplicationUser">
+                <LayoutGroup Id="ApplicationUser_col1" RelativeSize="28.990963855421686" />
+                <LayoutGroup Id="ApplicationUser_col2" RelativeSize="71.009036144578317">
+                  <TabbedGroup Id="Item6" RelativeSize="64.896755162241888">
+                    <LayoutGroup Id="Item5">
+                      <LayoutGroup Id="Item26" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="48.717948717948715" Caption="Employee Information">
+                        <LayoutItem Id="Company" ViewItem="Company" Index="0" RelativeSize="24" />
+                        <LayoutItem Id="CitizenNo" ViewItem="CitizenNo" Index="1" RelativeSize="17.333333333333332" />
+                        <LayoutItem Id="FullName" ViewItem="FullName" Index="2" RelativeSize="17.333333333333332" />
+                        <LayoutItem Id="Name" ViewItem="Name" Index="3" RelativeSize="17.333333333333332" />
+                        <LayoutItem Id="Surname" ViewItem="Surname" Index="4" RelativeSize="24" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Autoc7cbfcfa-437d-49bb-8fed-38168bffaaf6" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="51.025641025641029">
+                        <LayoutGroup Id="Item20" ShowCaption="True" Caption="Address Information" CaptionLocation="Top" GroupStyle="Title" Index="0" RelativeSize="49.620801733477791">
+                          <LayoutItem Id="Country" ViewItem="Country" Index="0" RelativeSize="21.176470588235293" />
+                          <LayoutItem Id="City" ViewItem="City" Index="1" RelativeSize="15.294117647058824" />
+                          <LayoutItem Id="Zip" ViewItem="Zip" Index="2" RelativeSize="15.294117647058824" />
+                          <LayoutItem Id="Address" ViewItem="Address" Index="3" RelativeSize="48.235294117647058" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Item21" ShowCaption="True" Caption="Personal Communication Information" CaptionLocation="Top" GroupStyle="Title" Index="1" RelativeSize="50.379198266522209">
+                          <LayoutItem Id="EMail" ViewItem="EMail" Index="0" RelativeSize="21.176470588235293" />
+                          <LayoutItem Id="Mobile" ViewItem="Mobile" Index="1" RelativeSize="15.294117647058824" />
+                          <LayoutItem Id="LandLine" ViewItem="LandLine" Index="2" RelativeSize="63.529411764705884" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutItem Id="CitizenNo" RelativeSize="7.6470588235294121" Index="1" Removed="True" />
+                      <LayoutGroup Id="Auto70b3c740-3bc6-4f56-877a-c4d7acc6300e" Caption="Auto70b3c740-3bc6-4f56-877a-c4d7acc6300e(18)" RelativeSize="0.25641025641025639" Index="2" Direction="Horizontal">
+                        <LayoutItem Id="LandLine" RelativeSize="100" Index="0" Removed="True" />
+                        <LayoutItem Id="Mobile" RelativeSize="49.837486457204768" Removed="True" />
+                      </LayoutGroup>
+                      <LayoutItem Id="Name" RelativeSize="7.6470588235294121" Index="3" Removed="True" />
+                      <LayoutItem Id="Country" RelativeSize="9.81132075471698" Index="4" Removed="True" />
+                      <LayoutItem Id="Surname" RelativeSize="7.6470588235294121" Index="4" Removed="True" />
+                      <LayoutItem Id="City" RelativeSize="9.81132075471698" Index="5" Removed="True" />
+                      <LayoutItem Id="Zip" RelativeSize="9.59409594095941" Index="6" Removed="True" />
+                      <LayoutItem Id="Address" RelativeSize="21.556886227544911" Index="7" Removed="True" />
+                      <LayoutItem Id="EMail" RelativeSize="7.7844311377245505" Index="8" Removed="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Files" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100">
+                      <LayoutItem Id="Files" TextAlignMode="AutoSize" ViewItem="Files" Index="0" RelativeSize="100" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item2" Index="2">
+                      <LayoutItem Id="EmergencyContactName" RelativeSize="9.23076923076923" />
+                      <LayoutItem Id="EmergencyContactMobile" RelativeSize="90.769230769230774" />
+                    </LayoutGroup>
+                  </TabbedGroup>
+                  <TabbedGroup Id="Item8" RelativeSize="35.103244837758112">
+                    <LayoutGroup Id="Item27" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" Caption="User Information for QPMS" RelativeSize="100">
+                      <LayoutGroup Id="Item22" ShowCaption="True" Caption="QPMS User Information" CaptionLocation="Top" Direction="Vertical" Index="0" RelativeSize="100">
+                        <LayoutItem Id="IsActive" ViewItem="IsActive" Index="0" RelativeSize="21.518987341772153" />
+                        <LayoutItem Id="ChangePasswordOnFirstLogon" ViewItem="ChangePasswordOnFirstLogon" Index="1" RelativeSize="15.189873417721518" />
+                        <LayoutItem Id="UserName" ViewItem="UserName" Index="2" RelativeSize="63.291139240506332" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item1" Index="1">
+                      <LayoutItem Id="Company" ViewItem="Company" Index="0" RelativeSize="13.636363636363637" Removed="True" />
+                      <LayoutGroup Id="Item23" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" RelativeSize="59.574468085106382" Caption="Working Period from/to">
+                        <LayoutItem Id="Start" ViewItem="Start" Index="0" RelativeSize="50" />
+                        <LayoutItem Id="End" ViewItem="End" Index="1" RelativeSize="50" />
+                      </LayoutGroup>
+                      <LayoutItem Id="ChangePasswordOnFirstLogon" ViewItem="ChangePasswordOnFirstLogon" Index="1" RelativeSize="9.0909090909090917" Removed="True" />
+                      <LayoutItem Id="IsActive" RelativeSize="10.084033613445378" Index="1" Removed="True" />
+                      <LayoutItem Id="MonthlyHours" ViewItem="MonthlyHours" Index="1" RelativeSize="13.829787234042554" />
+                      <LayoutItem Id="Start" RelativeSize="10.92436974789916" Index="1" Removed="True" />
+                      <LayoutItem Id="Car" ViewItem="Car" Index="2" RelativeSize="26.595744680851062" Removed="True" />
+                      <LayoutItem Id="End" RelativeSize="10.92436974789916" Index="2" Removed="True" />
+                      <LayoutItem Id="UserName" RelativeSize="9.8484848484848477" Index="2" Removed="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item19" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" Caption="Salary Information" RelativeSize="100">
+                      <LayoutItem Id="GrossMonthly" ViewItem="GrossMonthly" Index="0" RelativeSize="100" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Branches" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100">
+                      <LayoutItem Id="Branches" TextAlignMode="AutoSize" ViewItem="Branches" Index="0" RelativeSize="100" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item18" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" Caption="QPMS Roles" TextAlignMode="AlignWithChildren" RelativeSize="100">
+                      <LayoutItem Id="QPMSRoles" ViewItem="QPMSRoles" Index="0" RelativeSize="100" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Roles" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="5" RelativeSize="100">
+                      <LayoutItem Id="Roles" TextAlignMode="AutoSize" ViewItem="Roles" Index="0" RelativeSize="100" />
+                    </LayoutGroup>
+                  </TabbedGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Projects" TextAlignMode="AlignWithChildren" Index="1">
+                <LayoutItem Id="Projects" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+              <LayoutGroup Id="Timesheets" TextAlignMode="AlignWithChildren" Index="2">
+                <LayoutItem Id="Timesheets" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+              <LayoutGroup Id="BranchTimesheets" TextAlignMode="AlignWithChildren" Index="3">
+                <LayoutItem Id="BranchTimesheets" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+              <LayoutGroup Id="Files" TextAlignMode="AlignWithChildren" Index="4" Removed="True">
+                <LayoutItem Id="Files" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" Caption="User Self Menu" RelativeSize="100">
+                <TabbedGroup Id="Item7" CaptionLocation="Top" Index="0" RelativeSize="100">
+                  <LayoutGroup Id="MyNotes" ShowCaption="True" Caption="My Notes" TextAlignMode="AlignWithChildren" Index="0" RelativeSize="100">
+                    <LayoutItem Id="MyNotes" TextAlignMode="AutoSize" ViewItem="MyNotes" Index="0" RelativeSize="100" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="MyTasks" ShowCaption="True" Caption="My Tasks" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100">
+                    <LayoutItem Id="MyTasks" TextAlignMode="AutoSize" ViewItem="MyTasks" Index="0" RelativeSize="100" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="MyNotes" TextAlignMode="AlignWithChildren" Index="4" Removed="True">
+                <LayoutItem Id="MyNotes" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+              <LayoutGroup Id="MyTasks" TextAlignMode="AlignWithChildren" Index="4" Removed="True">
+                <LayoutItem Id="MyTasks" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+              <LayoutGroup Id="Roles" TextAlignMode="AlignWithChildren" Index="4" Removed="True">
+                <LayoutItem Id="Roles" TextAlignMode="AutoSize" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item9" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="5" Caption="Forms" TextAlignMode="UseParentOptions" RelativeSize="100">
+                <TabbedGroup Id="Item11" CaptionLocation="Top" Index="0" RelativeSize="100">
+                  <LayoutGroup Id="Item17" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" TextAlignMode="AlignWithChildren" RelativeSize="100" Caption="ARF">
+                    <LayoutItem Id="EARFS" ViewItem="EARFS" Index="0" RelativeSize="100" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item10" ShowCaption="True" CaptionLocation="Top" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" Caption="AZT">
+                    <LayoutItem Id="ApplicationUserAZTs" ViewItem="ApplicationUserAZTs" Index="0" RelativeSize="100" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item12" ShowCaption="True" CaptionLocation="Top" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" Caption="CZT">
+                    <LayoutItem Id="ApplicationUserCZTs" ViewItem="ApplicationUserCZTs" Index="0" RelativeSize="100" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item14" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="3" Caption="KKD" TextAlignMode="AlignWithChildren" RelativeSize="100">
+                    <LayoutItem Id="KKD" ViewItem="KKD" Index="0" RelativeSize="100" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item15" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" Caption="PIIF" TextAlignMode="AlignWithChildren" RelativeSize="100">
+                    <LayoutItem Id="PIIFS" ViewItem="PIIFS" Index="0" RelativeSize="100" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item16" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="6" Caption="Record Details" RelativeSize="100">
+                <LayoutItem Id="CreatedBy" ViewItem="CreatedBy" Index="0" RelativeSize="5.3097345132743365" />
+                <LayoutItem Id="CreatedOn" ViewItem="CreatedOn" Index="1" RelativeSize="3.8348082595870205" />
+                <LayoutItem Id="UpdatedBy" ViewItem="UpdatedBy" Index="2" RelativeSize="3.8348082595870205" />
+                <LayoutItem Id="UpdatedOn" ViewItem="UpdatedOn" Index="3" RelativeSize="3.8348082595870205" />
+                <LayoutItem Id="Version" ViewItem="Version" Index="4" RelativeSize="83.1858407079646" />
+              </LayoutGroup>
+              <LayoutGroup Id="Branches" Removed="True" />
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="PermissionPolicyUser_Roles_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Name" Width="72" />
+      </Columns>
+    </ListView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Admin">
+        <Items Id="Items">
+          <Item Id="User Management">
+            <Items Id="Items">
+              <Item Id="PermissionPolicyRole_ListView" ViewId="PermissionPolicyRole_ListView" />
+              <Item Id="ApplicationUserSelfNote_ListView" ViewId="ApplicationUserSelfNote_ListView" />
+              <Item Id="ApplicationUserNote_ListView" ViewId="ApplicationUserNote_ListView" />
+              <Item Id="ApplicationUser_ListView" ViewId="ApplicationUser_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+      <Item Id="Default">
+        <Items Id="Items">
+          <Item Id="ApplicationUser_ListView" Removed="True" />
+          <Item Id="ApplicationUserNote_ListView" Removed="True" />
+          <Item Id="ApplicationUserSelfNote_ListView" Removed="True" />
+          <Item Id="PermissionPolicyRole_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

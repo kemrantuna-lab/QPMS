@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Company="Orca Kalte Hizmetleri" Copyright="Tüm Hakları Saklıdır. 2022" VersionFormat="Versiyon {0}.{1}.{2}">
+  <ActionDesign>
+    <Actions>
+      <Action Id="Cancel" Caption="İptal" />
+      <Action Id="CopyModelDifference" Caption="Model Farklarını Kopyala" />
+      <Action Id="CreateModelDifferences" Caption="Model Farklarını Oluştur" />
+      <Action Id="Delete" Caption="Sil" ConfirmationMessage="Seçili kaydı/kayıtları silmek üzeresiniz. Devam etmek istiyor musunuz?" />
+      <Action Id="Delete Item" Caption="Kayıt Sil" ConfirmationMessage="Seçili kaydı/kayıtları silmek üzeresiniz. Devam etmek istiyor musunuz?" />
+      <Action Id="Diagnostic Info" Caption="Teşhis" />
+      <Action Id="Diagnostic Info.Actions Info" Caption="Teşhis Bilgisi.Aksiyon Bilgisi">
+        <ChoiceActionItems>
+          <ChoiceActionItem Id="Actions Info" Caption="Aksiyonların Bilgisi" />
+        </ChoiceActionItems>
+      </Action>
+      <Action Id="Diagnostic Info.View Info" Caption="Teşhis Bilgisi.Görünüm Bilgisi">
+        <ChoiceActionItems>
+          <ChoiceActionItem Id="View Info" Caption="Görünüm Bilgisi" />
+        </ChoiceActionItems>
+      </Action>
+      <Action Id="DialogCancel" Caption="İptal" />
+      <Action Id="DialogClose" Caption="Kapat" />
+      <Action Id="ExportModelDifferences" Caption="Model Farklarını Dışa Aktar" />
+      <Action Id="FullTextSearch" Caption="Metne göre filtrele..." ShortCaption="Ara" NullValuePrompt="Metne göre arama..." ToolTip="Kayıtları metne göre fitrele" />
+      <Action Id="ImportSharedModelDifference" Caption="Model Farklarını İçe Aktar" />
+      <Action Id="ListViewShowObject" Caption="Aç" />
+      <Action Id="Logoff" Caption="Çıkış" />
+      <Action Id="Logon" Caption="Giriş" />
+      <Action Id="MergeAction" ToolTip="Birleştir" />
+      <Action Id="NavigateBack" Caption="Geri" ToolTip="Önceki görünüme git" />
+      <Action Id="NavigateForward" Caption="İleri" ToolTip="Sonraki görünüme git" />
+      <Action Id="New" Caption="Yeni">
+        <DisableReasons>
+          <Reason Id="MasterObjectIsNew" Caption="Düzenlenen nesne yenidir." />
+        </DisableReasons>
+      </Action>
+      <Action Id="NextObject" Caption="Sonraki Kayıt" />
+      <Action Id="PreviousObject" Caption="Önceki Kayıt" />
+      <Action Id="Refresh" Caption="Tazele" />
+      <Action Id="RefreshAction" Caption="Tazele" />
+      <Action Id="ResetModelDifferences" Caption="Model Farklarını Resetle" />
+      <Action Id="Save" Caption="Sakla" />
+      <Action Id="SaveAndClose" Caption="Sakla ve Kapat" />
+      <Action Id="SaveAndNew" Caption="Sakla ve Yeni" />
+      <Action Id="SetFilter" Caption="Filtrele" />
+      <Action Id="Unlink" Caption="Bağlantıyı Kaldır" ConfirmationMessage="Seçili kaydın/kayıtların bağlantılarını kaldırmak üzeresiniz. Devam etmek istiyor musunuz?" />
+    </Actions>
+  </ActionDesign>
+</Application>

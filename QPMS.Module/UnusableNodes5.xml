@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="BranchResponsible">
+        <Items Id="Items">
+          <Item Id="Timesheet_ListView_Copy" ViewId="Timesheet_ListView" />
+        </Items>
+      </Item>
+      <Item Id="CompanyHR">
+        <Items Id="Items">
+          <Item Id="Misc">
+            <Items Id="Items">
+              <Item Id="ApplicationUserSelfNote_ListView" ViewId="ApplicationUserSelfNote_ListView" />
+              <Item Id="ApplicationUserNote_ListView" ViewId="ApplicationUserNote_ListView" />
+            </Items>
+          </Item>
+          <Item Id="Forms">
+            <Items Id="Items">
+              <Item Id="ApplicationUserPIIF_ListView" ViewId="ApplicationUserPIIF_ListView" />
+              <Item Id="ApplicationUserKKD_ListView" ViewId="ApplicationUserKKD_ListView" />
+              <Item Id="ApplicationUserCZT_ListView" ViewId="ApplicationUserCZT_ListView" />
+              <Item Id="ApplicationUserAZT_ListView" ViewId="ApplicationUserAZT_ListView" />
+              <Item Id="ApplicationUserAllowanceRequestForm_ListView" ViewId="ApplicationUserAllowanceRequestForm_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+      <Item Id="Admin">
+        <Items Id="Items">
+          <Item Id="User Management">
+            <Items Id="Items">
+              <Item Id="ApplicationUserFile_ListView" ViewId="ApplicationUserFile_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

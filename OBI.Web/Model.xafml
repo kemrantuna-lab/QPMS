@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Description="Orca Business Intelligence" Title="OBI" Logo="Logos.obi">
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerAspNetModule" Version="22.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="22.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemAspNetModule" Version="22.2.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

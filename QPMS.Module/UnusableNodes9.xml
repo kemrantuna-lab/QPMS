@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="BranchResponsible">
+        <Items Id="Items">
+          <Item Id="Timesheet_ListView_Copy" ViewId="Timesheet_ListView" />
+        </Items>
+      </Item>
+      <Item Id="CompanyHR">
+        <Items Id="Items">
+          <Item Id="Misc">
+            <Items Id="Items">
+              <Item Id="ApplicationUserSelfNote_ListView" ViewId="ApplicationUserSelfNote_ListView" />
+              <Item Id="ApplicationUserNote_ListView" ViewId="ApplicationUserNote_ListView" />
+            </Items>
+          </Item>
+          <Item Id="Forms">
+            <Items Id="Items">
+              <Item Id="ApplicationUserPIIF_ListView" ViewId="ApplicationUserPIIF_ListView" />
+              <Item Id="ApplicationUserKKD_ListView" ViewId="ApplicationUserKKD_ListView" />
+              <Item Id="ApplicationUserCZT_ListView" ViewId="ApplicationUserCZT_ListView" />
+              <Item Id="ApplicationUserAZT_ListView" ViewId="ApplicationUserAZT_ListView" />
+              <Item Id="ApplicationUserAllowanceRequestForm_ListView" ViewId="ApplicationUserAllowanceRequestForm_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <ActionDesign Id="ActionDesign">
+    <Actions Id="Actions">
+      <Action Id="AdminCreateDefaultRolesOfCompany" ImageName="Security_WarningCircled1" TargetObjectsCriteria="[IsDefaultRolesCreated] = False" />
+    </Actions>
+  </ActionDesign>
+  <Views Id="Views">
+    <DetailView Id="Employee_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item5">
+              <LayoutGroup Id="Item9">
+                <TabbedGroup Id="Item12">
+                  <LayoutGroup Id="PIIFS">
+                    <LayoutItem Id="PIIFS" ViewItem="PIIFS" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="KKDS">
+                    <LayoutItem Id="KKDS" ViewItem="KKDS" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="CZTS">
+                    <LayoutItem Id="CZTS" ViewItem="CZTS" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="AZTS">
+                    <LayoutItem Id="AZTS" ViewItem="AZTS" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="ARFS">
+                    <LayoutItem Id="ARFS" ViewItem="ARFS" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

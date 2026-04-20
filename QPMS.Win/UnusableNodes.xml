@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="ApplicationUser_ListView_Company_HR" MasterDetailMode="ListViewOnly" />
+  </Views>
+</Application>

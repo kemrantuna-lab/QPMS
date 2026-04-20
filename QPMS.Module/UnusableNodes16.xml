@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="BranchTimesheet_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BranchTimesheet">
+              <LayoutGroup Id="BranchTimesheet_col2">
+                <LayoutItem Id="BTF" Index="1" RelativeSize="4.8507462686567164" Removed="True" />
+                <LayoutItem Id="StartHourWrapper" Index="2" RelativeSize="4.8507462686567164" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

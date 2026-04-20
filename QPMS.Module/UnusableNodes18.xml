@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="ProjectTimesheet_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item4">
+              <LayoutItem Id="EndMinuteWrapper" ViewItem="EndMinuteWrapper" />
+              <LayoutItem Id="EndHourWrapper" ViewItem="EndHourWrapper" />
+              <LayoutItem Id="StartMinuteWrapper" ViewItem="StartMinuteWrapper" />
+              <LayoutItem Id="StartHourWrapper" ViewItem="StartHourWrapper" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

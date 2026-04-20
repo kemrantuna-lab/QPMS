@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Applications>
+    <!-- Win -->
+    <Application Name="QPMSWin" FileName="[WinAppBin]\QPMS.Win.exe" AdapterAssemblyName="[WinAdapterAssemblyName]" CommunicationPort="4100" />
+    <!-- Web -->
+    <Application Name="QPMSWeb" UseIISExpress="True" Url="http://localhost:4030" PhysicalPath="[WebAppBin]" AdapterFileName="[WebAdapterAssemblyPath]" IgnoreCase="true" />
+    <!-- For IIS -->
+    <!--
+		<Application
+			Name="QPMSWeb"
+			Url="http://localhost/QPMS.Web/Default.aspx"
+			AdapterFileName="[WebAdapterAssemblyPath]"
+			IgnoreCase="true"/>
+		-->
+    <!-- Web -->
+    <Application Name="QPMSWeb" UseIISExpress="True" Url="http://localhost:4030" PhysicalPath="[WebAppBin]" AdapterFileName="[WebAdapterAssemblyPath]" IgnoreCase="true" />
+    <!-- For IIS -->
+    <!--
+		<Application
+			Name="QPMSWeb"
+			Url="http://localhost/QPMS.Maintenance.Web/Default.aspx"
+			AdapterFileName="[WebAdapterAssemblyPath]"
+			IgnoreCase="true"/>
+		-->
+    <!-- Web -->
+    <Application Name="QPMSWeb" UseIISExpress="True" Url="http://localhost:4030" PhysicalPath="[WebAppBin]" AdapterFileName="[WebAdapterAssemblyPath]" IgnoreCase="true" />
+    <!-- For IIS -->
+    <!--
+		<Application
+			Name="QPMSWeb"
+			Url="http://localhost/OBI.Web/Default.aspx"
+			AdapterFileName="[WebAdapterAssemblyPath]"
+			IgnoreCase="true"/>
+		-->
+    <!-- Web -->
+    <Application Name="QPMSWeb" UseIISExpress="True" Url="http://localhost:4030" PhysicalPath="[WebAppBin]" AdapterFileName="[WebAdapterAssemblyPath]" IgnoreCase="true" />
+    <!-- For IIS -->
+    <!--
+		<Application
+			Name="QPMSWeb"
+			Url="http://localhost/OBI.Web/Default.aspx"
+			AdapterFileName="[WebAdapterAssemblyPath]"
+			IgnoreCase="true"/>
+		-->
+  </Applications>
+  <TestDatabases>
+    <Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="QPMSEasyTest" />
+  </TestDatabases>
+  <Aliases>
+    <Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v25.2, Version=25.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Alias Name="WebAdapterAssemblyPath" Value="[WebAppBin]\Bin\DevExpress.ExpressApp.EasyTest.SeleniumWebAdapter.v21.2.dll" />
+    <Alias Name="WinAppBin" Value="[ConfigPath]\..\..\QPMS.Win\Bin\EasyTest" />
+    <Alias Name="WebAppBin" Value="[ConfigPath]\..\..\QPMS.Web" />
+    <Alias Name="WebAdapterAssemblyPath" Value="[WebAppBin]\Bin\DevExpress.ExpressApp.EasyTest.SeleniumWebAdapter.v21.2.dll" />
+    <Alias Name="WebAppBin" Value="[ConfigPath]\..\..\QPMS.Maintenance.Web" />
+    <Alias Name="WebAdapterAssemblyPath" Value="[WebAppBin]\Bin\DevExpress.ExpressApp.EasyTest.SeleniumWebAdapter.v21.2.dll" />
+    <Alias Name="WebAppBin" Value="[ConfigPath]\..\..\OBI.Web" />
+    <Alias Name="WebAdapterAssemblyPath" Value="[WebAppBin]\Bin\DevExpress.ExpressApp.EasyTest.SeleniumWebAdapter.v21.2.dll" />
+    <Alias Name="WebAppBin" Value="[ConfigPath]\..\..\OBI.Web" />
+  </Aliases>
+</Options>
