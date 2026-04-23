@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Applications>
     <!-- Win -->
@@ -48,7 +48,7 @@
     <Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="QPMSEasyTest" />
   </TestDatabases>
   <Aliases>
-    <Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v25.2, Version=25.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v25.1, Version=25.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Alias Name="WebAdapterAssemblyPath" Value="[WebAppBin]\Bin\DevExpress.ExpressApp.EasyTest.SeleniumWebAdapter.v21.2.dll" />
     <Alias Name="WinAppBin" Value="[ConfigPath]\..\..\QPMS.Win\Bin\EasyTest" />
     <Alias Name="WebAppBin" Value="[ConfigPath]\..\..\QPMS.Web" />

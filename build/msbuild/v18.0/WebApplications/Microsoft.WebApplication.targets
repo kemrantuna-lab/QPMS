@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+    Minimal stub for environments without the Visual Studio WebApplication targets.
+    QPMS.Web builds as a standard library; the CSharp targets handle compilation.
+  -->
+  <PropertyGroup>
+    <WebProjectOutputDir Condition="'$(WebProjectOutputDir)' == ''">$(OutDir)</WebProjectOutputDir>
+  </PropertyGroup>
+</Project>

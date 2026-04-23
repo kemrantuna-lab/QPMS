@@ -60,7 +60,7 @@ namespace QPMS.Web {
         {
             Debug.WriteLine("Entering Routine");
             XPObjectSpaceProvider globalObjectSpace = new XPObjectSpaceProvider(
- @"Data Source=192.168.8.241,1433;Initial Catalog=qpms_prod_4;Persist Security Info=True;User ID=webadmin1;Password=AzraAa.963852741", null);
+ QPMS.Module.ConnectionStringProvider.RequireConnectionString(), null);
 
             try
             {
@@ -121,21 +121,18 @@ namespace QPMS.Web {
 
         private IEnumerable<IDisposable> GetHangfireServers()
         {
-            if (ConfigurationManager.ConnectionStrings["ConnectionString"] != null)
-            {
-                GlobalConfiguration.Configuration
-                 .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
-                 .UseSimpleAssemblyNameTypeSerializer()
-                 .UseRecommendedSerializerSettings()
-                 .UseSqlServerStorage(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString, new SqlServerStorageOptions
-                 {
-                     CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
-                     SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
-                     QueuePollInterval = TimeSpan.Zero,
-                     UseRecommendedIsolationLevel = true,
-                     DisableGlobalLocks = true
-                 });
-            }
+            GlobalConfiguration.Configuration
+             .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+             .UseSimpleAssemblyNameTypeSerializer()
+             .UseRecommendedSerializerSettings()
+             .UseSqlServerStorage(QPMS.Module.ConnectionStringProvider.RequireConnectionString(), new SqlServerStorageOptions
+             {
+                 CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
+                 SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
+                 QueuePollInterval = TimeSpan.Zero,
+                 UseRecommendedIsolationLevel = true,
+                 DisableGlobalLocks = true
+             });
             yield return new BackgroundJobServer();
         }
 
@@ -147,9 +144,7 @@ namespace QPMS.Web {
             security.RegisterXPOAdapterProviders();
             DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
             WebApplication.Instance.SwitchToNewStyle();
-            if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
-                WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            }
+            WebApplication.Instance.ConnectionString = QPMS.Module.ConnectionStringProvider.RequireConnectionString();
 #if EASYTEST
             if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;

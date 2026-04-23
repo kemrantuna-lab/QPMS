@@ -8,6 +8,7 @@ using QPMS.Module.BusinessObjects;
 using QPMS.Module.Reports;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 
 namespace QPMS.Module
@@ -51,6 +52,20 @@ namespace QPMS.Module
                     compositeObjectSpace.PopulateAdditionalObjectSpaces((XafApplication)sender);
                 }
             }
+        }
+    }
+
+    public static class ConnectionStringProvider
+    {
+        public static string RequireConnectionString()
+        {
+            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["ConnectionString"];
+            if (settings == null || string.IsNullOrWhiteSpace(settings.ConnectionString))
+            {
+                throw new ConfigurationErrorsException("ConnectionString is not configured.");
+            }
+
+            return settings.ConnectionString;
         }
     }
 }

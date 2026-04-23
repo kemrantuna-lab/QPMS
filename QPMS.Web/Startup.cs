@@ -16,7 +16,7 @@ namespace QPMS.Web
                 .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
                 .UseSimpleAssemblyNameTypeSerializer()
                 .UseRecommendedSerializerSettings()
-                .UseSqlServerStorage("Data Source=192.168.8.241,1433;Initial Catalog=qpms_prod_4;Persist Security Info=True;User ID=webadmin1;Password=AzraAa.963852741", new SqlServerStorageOptions
+                .UseSqlServerStorage(QPMS.Module.ConnectionStringProvider.RequireConnectionString(), new SqlServerStorageOptions
                 {
                     CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
                     SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),

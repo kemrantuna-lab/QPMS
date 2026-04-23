@@ -14,7 +14,7 @@ namespace QPMS.Web
     public partial class HangFireJobs : System.Web.UI.Page
     {
         private XPObjectSpaceProvider globalObjectSpace = new XPObjectSpaceProvider(
-@"Data Source=192.168.8.241,1433;Initial Catalog=qpms_prod_4;Persist Security Info=True;User ID=webadmin1;Password=AzraAa.963852741", null);
+QPMS.Module.ConnectionStringProvider.RequireConnectionString(), null);
 
 
 
@@ -42,7 +42,7 @@ namespace QPMS.Web
 
     public class ReCalculateValues{
         private XPObjectSpaceProvider globalObjectSpace = new XPObjectSpaceProvider(
-@"Data Source=192.168.8.241,1433;Initial Catalog=qpms_prod_4;Persist Security Info=True;User ID=webadmin1;Password=AzraAa.963852741", null);
+QPMS.Module.ConnectionStringProvider.RequireConnectionString(), null);
 
         public void BranchTimesheetRecalculate()
         {
