@@ -77,7 +77,7 @@ namespace QPMS.Module.Controllers
                                 pc.Project = currentParentIsPTF.Project;
                             }
                         }
-                    } catch (Exception ex)
+                    } catch (Exception)
                     {
 
                     }

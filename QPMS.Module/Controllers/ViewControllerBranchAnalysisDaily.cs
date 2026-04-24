@@ -65,8 +65,6 @@ namespace QPMS.Module.Controllers
             double btCount = 0;
             double btHourCount = 0;
 
-            double btfHourTotal = 0;
-
             var branch = currentBranchDailyAnalysis.Branch;
 
             var btfList = branch.BTFs.Where(p=>p.Date == currentBranchDailyAnalysis.Date).ToList();
@@ -133,7 +131,7 @@ namespace QPMS.Module.Controllers
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                     }

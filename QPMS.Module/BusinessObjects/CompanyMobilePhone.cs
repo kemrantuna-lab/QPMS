@@ -165,7 +165,7 @@ namespace QPMS.Module.BusinessObjects
 
                 // Remove an users's reference to this car, if exists.
                 if (prevUser != null && prevUser.CompanyMobile == this)
-                    prevUser.Car = null;
+                    prevUser.CompanyMobile = null;
 
                 // Specify that the car is a new user's car.
                 if (user != null)

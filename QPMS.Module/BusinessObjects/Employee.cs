@@ -569,18 +569,14 @@ namespace QPMS.Module.BusinessObjects
         [DataSourceProperty("Company.MobilePhones")]
         public CompanyMobilePhone CompanyMobile
         {
-            get
-            {
-                return companyMobile;
-            }
+            get { return companyMobile; }
             set
             {
                 if (companyMobile == value)
                     return;
 
-                // Store a reference to the former user.
                 CompanyMobilePhone previousMobile = companyMobile;
-                previousMobile = value;
+                companyMobile = value;
 
                 if (IsLoading) return;
 

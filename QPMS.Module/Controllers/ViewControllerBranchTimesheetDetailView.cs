@@ -20,7 +20,6 @@ namespace QPMS.Module.Controllers
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppViewControllertopic.aspx.
     public partial class ViewControllerBranchTimesheetDetailView : ViewController
     {
-        private ViewController controller;
         // Use CodeRush to create Controllers and Actions with a few keystrokes.
         // https://docs.devexpress.com/CodeRushForRoslyn/403133/
         public ViewControllerBranchTimesheetDetailView()

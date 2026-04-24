@@ -80,7 +80,7 @@ namespace QPMS.Module.Controllers
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                     }

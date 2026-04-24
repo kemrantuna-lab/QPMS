@@ -216,3 +216,65 @@ After that, create `summary-report-02.md` and continue there.
 - Notes:
   - Temporary ACME test files and repo-side test artifacts were cleaned up after issuance.
   - `www.qpms.orerps.com` and `ipv4.qpms.orerps.com` still have IIS bindings, but DNS resolution for those hostnames was not present during this check window.
+
+## 2026-04-24 10:47 Europe/Istanbul - QPMS warning cleanup
+
+- Scope:
+  - Reproduced the current warning set by building the solution with MSBuild.
+  - Cleaned the actionable compiler and reference warnings in the `QPMS.Module` path.
+  - Rebuilt `QPMS.Module`, `QPMS.Module.Web`, and `QPMS.Web` to verify warning-free output.
+
+- Findings:
+  - The actionable warnings were concentrated in `QPMS.Module` and were mainly:
+    - unused exception variables
+    - dead locals and private fields
+    - stale project references to unused DevExpress assemblies
+  - Two warnings exposed real defects rather than harmless noise:
+    - `Employee.CompanyMobile` was not assigning its backing field
+    - `ViewControllerBranchTimesheetC` was checking a `NewObjectViewController` field that was never assigned
+
+- Changes applied:
+  - Removed unused catch variables and dead locals in:
+    - `QPMS.Module/Controllers/ViewControllerProjectCost.cs`
+    - `QPMS.Module/Controllers/ViewControllerBranchAnalysisDaily.cs`
+    - `QPMS.Module/Controllers/ViewControllerProject.cs`
+    - `QPMS.Module/BusinessObjects/EmployeeForm.cs`
+    - `QPMS.Module/Controllers/ViewControllerFailure.cs`
+    - `QPMS.Module/BusinessObjects/Project.cs`
+  - Removed never-used private fields in:
+    - `QPMS.Module/Controllers/ViewControllerBranchTimesheetDetailView.cs`
+    - `QPMS.Module/BusinessObjects/Project.cs`
+    - `QPMS.Module/BusinessObjects/ProjectAnalysisDaily.cs`
+    - `QPMS.Module/BusinessObjects/EmployeeQuit.cs`
+  - Restored intended controller wiring in:
+    - `QPMS.Module/Controllers/ViewControllerBranchTimesheetC.cs`
+  - Fixed the `CompanyMobile` / `User` association cleanup logic in:
+    - `QPMS.Module/BusinessObjects/Employee.cs`
+    - `QPMS.Module/BusinessObjects/CompanyMobilePhone.cs`
+  - Fixed two obvious copy-paste issues discovered in touched files:
+    - `QPMS.Module/BusinessObjects/Project.cs` now uses `fTotalMealPrice` as the old value for `TotalMealPrice`
+    - `QPMS.Module/BusinessObjects/EmployeeQuit.cs` now returns `updatedBy` from `UpdatedBy`
+  - Removed unused unresolved DevExpress references from:
+    - `QPMS.Module/QPMS.Module.csproj`
+    - Removed references:
+      - `DevExpress.Data.Desktop.v25.1`
+      - `DevExpress.Pdf.v25.1.Core`
+      - `DevExpress.Sparkline.v25.1.Core`
+      - `DevExpress.XtraGauges.v25.1.Core`
+
+- Verification:
+  - `QPMS.Module.csproj` build completed with:
+    - `0 Warning(s)`
+    - `0 Error(s)`
+  - `QPMS.Module.Web.csproj` build completed with:
+    - `0 Warning(s)`
+    - `0 Error(s)`
+  - `QPMS.Web.csproj` build completed with:
+    - `0 Warning(s)`
+    - `0 Error(s)`
+
+- Notes:
+  - The first full-solution build still showed separate `OBI.*` branch issues outside this warning cleanup scope:
+    - `OBI.*` projects still reference missing DevExpress `25.2` assemblies on this machine
+    - legacy web projects require the local `build/msbuild/v18.0` web-target shim when using the current MSBuild toolchain
+  - A temporary local reference pool was created only for verification of the QPMS web build path and then removed.

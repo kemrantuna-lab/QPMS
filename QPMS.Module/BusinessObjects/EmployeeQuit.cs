@@ -70,7 +70,6 @@ namespace QPMS.Module.BusinessObjects
 
 
         DateTime date;
-        EmployeeFile file;
         FileData dismissalReport;
         FileData quitPaySlip;
         FileData terminationBenefitPayroll;
@@ -190,11 +189,7 @@ namespace QPMS.Module.BusinessObjects
             set => SetPropertyValue(nameof(Company), ref company, value);
         }
 
-        Branch branch;
         Company company;
-        MediaDataObject document;
-        string code;
-        string formName;
         bool hasUpdate;
         int version;
         Employee createdBy;
@@ -217,7 +212,7 @@ namespace QPMS.Module.BusinessObjects
         [ModelDefault("AllowEdit", "False"), ModelDefault("IsVisibleInListView", "False"), ModelDefault("IsVisibleInDetailView", "False")]
         public Employee UpdatedBy
         {
-            get { return createdBy; }
+            get { return updatedBy; }
             set { SetPropertyValue("UpdatedBy", ref updatedBy, value); }
         }
 

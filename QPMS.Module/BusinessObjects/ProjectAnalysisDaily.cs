@@ -50,11 +50,6 @@ namespace QPMS.Module.BusinessObjects
             fOrderQuantityNA= null;
         }
 
-        int rNOK;
-        int rOK;
-        int nOK;
-        int oK;
-        double tH;
         DateTime date;
         Project project;
 

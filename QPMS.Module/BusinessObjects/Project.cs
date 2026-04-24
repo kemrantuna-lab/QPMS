@@ -196,8 +196,6 @@ namespace QPMS.Module.BusinessObjects
         CSL cSL;
         Lang language;
         FileData workInstruction;
-        double eH;
-        double nH;
         double tHours;
         FileData workOrder;
         State state;
@@ -1238,7 +1236,7 @@ namespace QPMS.Module.BusinessObjects
                         tempTotal = tempTotal + item.GrandTotal;
                     }
                 }
-            } catch (Exception ex)
+            } catch (Exception)
             {
                 tempTotal= 0;
             }
@@ -1267,9 +1265,6 @@ namespace QPMS.Module.BusinessObjects
         {
             double? oldTotalMealsQuantity = fTotalMealsQuantity; 
             double tempTotal = 0;
-            double tempTotalMealPrice = 0;
-            
-
             try
             {
                 var list = this.Timesheets.ToList();
@@ -1280,7 +1275,7 @@ namespace QPMS.Module.BusinessObjects
                         tempTotal = tempTotal + item.MealQuantity;
                     }
                 }
-            } catch (Exception ex)
+            } catch (Exception)
             {
                 tempTotal = 0;
             }
@@ -1308,7 +1303,7 @@ namespace QPMS.Module.BusinessObjects
 
         private void UpdateTotalMealPrice(bool forceChangeEvents)
         {
-            double? oldTotal = fTotalMealsQuantity;
+            double? oldTotal = fTotalMealPrice;
             double tempTotal = 0;
 
             try
@@ -1323,7 +1318,7 @@ namespace QPMS.Module.BusinessObjects
                     }
                 }
             } catch
-            (Exception ex)
+            (Exception)
             {
                 tempTotal = 0;
             }
@@ -1358,7 +1353,7 @@ namespace QPMS.Module.BusinessObjects
                     {
                         tempTotal = tempTotal+item.KM;
                     } }
-            } catch(Exception ex)
+            } catch(Exception)
             {
                 tempTotal = 0;
             }
@@ -1396,7 +1391,7 @@ namespace QPMS.Module.BusinessObjects
                 {
                     tempTotal = tempTotal+item.DisplacementPrice;
                 }
-            } catch(Exception ex)
+            } catch(Exception)
             {
                 tempTotal = 0;
             }

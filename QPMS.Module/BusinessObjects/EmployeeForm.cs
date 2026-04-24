@@ -74,7 +74,7 @@ namespace QPMS.Module.BusinessObjects
                 {
                     Company = userCurrent.Company;
                 }
-            } catch (Exception ex)
+            } catch (Exception)
             {
 
             }

@@ -32,7 +32,7 @@ namespace QPMS.Module.Controllers
         {
             base.OnActivated();
             // Perform various tasks depending on the target View.
-            //controller = Frame.GetController<NewObjectViewController>();
+            controller = Frame.GetController<NewObjectViewController>();
             if (controller != null)
             {
                 controller.ObjectCreated += controller_ObjectCreated;
