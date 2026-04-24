@@ -530,7 +530,7 @@
             this.Detail.KeepTogether = true;
             this.Detail.Name = "Detail";
             this.Detail.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
-            this.Detail.Visible = false;
+            this.Detail.Visible = true;
             // 
             // ExternalUsers
             // 
