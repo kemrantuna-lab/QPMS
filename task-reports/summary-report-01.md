@@ -181,3 +181,38 @@ After that, create `summary-report-02.md` and continue there.
 
 - Notes:
   - The separate `CustomerUser/Admin` record was left unchanged intentionally.
+
+## 2026-04-24 10:38 Europe/Istanbul - QPMS Let's Encrypt certificate deployment
+
+- Scope:
+  - Added a live Let's Encrypt certificate for `qpms.orerps.com`.
+  - Verified the certificate was deployed through Plesk and bound in IIS.
+  - Confirmed the HTTPS login endpoint still responds normally after the certificate change.
+
+- Findings during issuance:
+  - A direct `win-acme` filesystem challenge attempt against the app root was blocked because `/.well-known/acme-challenge/*` was being redirected into the QPMS login flow.
+  - The server already had the Plesk `letsencrypt` extension installed, so issuance was completed through Plesk instead of keeping an app-level ACME workaround.
+
+- Changes applied:
+  - Executed:
+    - `plesk bin extension --exec letsencrypt cli.php -d qpms.orerps.com -m info@orerps.com`
+  - Plesk created and assigned certificate:
+    - `Lets Encrypt qpms.orerps.com`
+  - IIS HTTPS bindings for `qpms.orerps.com` now use certificate thumbprint:
+    - `32D41597C774C1822D53D301F27F7863A45AF883`
+  - Issuer:
+    - `Let's Encrypt R13`
+
+- Live verification:
+  - `domain.exe --info qpms.orerps.com` now reports:
+    - `Certificate: Lets Encrypt qpms.orerps.com`
+  - The certificate in `LocalMachine\WebHosting` has:
+    - `Subject: CN=qpms.orerps.com`
+    - `NotBefore: 2026-04-24 09:36:23`
+    - `NotAfter: 2026-07-23 09:36:22`
+  - TLS handshake against `qpms.orerps.com:443` returns the same thumbprint and subject.
+  - `curl -k -I https://qpms.orerps.com/Login.aspx?ReturnUrl=%2f` returned `HTTP/1.1 200 OK`.
+
+- Notes:
+  - Temporary ACME test files and repo-side test artifacts were cleaned up after issuance.
+  - `www.qpms.orerps.com` and `ipv4.qpms.orerps.com` still have IIS bindings, but DNS resolution for those hostnames was not present during this check window.
