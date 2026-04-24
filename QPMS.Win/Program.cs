@@ -32,12 +32,12 @@ namespace QPMS.Win {
             }
             Tracing.Initialize();
             QPMSWindowsFormsApplication winApplication = new QPMSWindowsFormsApplication();
-            winApplication.GetSecurityStrategy().RegisterXPOAdapterProviders();
-            if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
-                winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            winApplication.ConfigureDataAccessFromConfiguration();
+            if(!winApplication.UseMiddleTier) {
+                winApplication.GetSecurityStrategy().RegisterXPOAdapterProviders();
             }
 #if EASYTEST
-            if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
+            if(!winApplication.UseMiddleTier && ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
             }
 #endif

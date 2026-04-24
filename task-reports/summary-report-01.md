@@ -438,3 +438,212 @@ After that, create `summary-report-02.md` and continue there.
   - Current live data checks showed `Customer` is null for both:
     - `XFDB13155`
     - `XFC013133`
+
+## 2026-04-24 18:51 Europe/Istanbul - Project Report 2 clone runtime stabilization
+
+- Scope:
+  - Investigated why the newly cloned `Project Report 2` kept spinning in the live QPMS report preview window.
+  - Patched missing DevExpress web-report runtime dependencies and removed the live clone name collision.
+
+- Findings:
+  - The live clone was created as:
+    - `REPORT-00000024`
+    - `Name: Project Report 2`
+    - `IsInplaceReport: 1`
+    - `ContentBytes: 105564`
+  - The original report already existed as:
+    - `REPORT-00000023`
+    - `Name: Project Report 2`
+    - `PredefinedReportType: QPMS.Module.Reports.Project_Report`
+  - The live web log recorded a report-related dependency failure while working with the clone:
+    - `Could not load file or assembly 'DevExpress.Sparkline.v25.1.Core, Version=25.1.5.0'`
+  - `XafReportStorageWebTool` in the web reporting stack works with string report URLs, so leaving the clone with the exact same report name as the original was an avoidable collision risk.
+
+- Changes applied:
+  - Added direct `QPMS.Web` references and package metadata for:
+    - `DevExpress.Data.Desktop.v25.1`
+    - `DevExpress.Sparkline.v25.1.Core`
+    - `DevExpress.XtraGauges.v25.1.Core`
+  - Copied the required package payloads into the repo `packages/` folder from the local NuGet cache.
+  - Rebuilt `QPMS.Web` in `Release` with the existing local web-target/reference-pool workflow.
+  - Deployed these new runtime assemblies to the live site:
+    - `C:\Plesk Vhosts\orerps.com\qpms.orerps.com\bin\DevExpress.Data.Desktop.v25.1.dll`
+    - `C:\Plesk Vhosts\orerps.com\qpms.orerps.com\bin\DevExpress.Sparkline.v25.1.Core.dll`
+    - `C:\Plesk Vhosts\orerps.com\qpms.orerps.com\bin\DevExpress.XtraGauges.v25.1.Core.dll`
+  - Renamed the clone record in the live database to:
+    - `Project Report 2 Clone`
+  - Recycled IIS app pool:
+    - `qpms.orerps.com(domain)(4.0)(pool)`
+
+- Verification:
+  - `QPMS.Web.csproj` build completed with:
+    - `0 Warning(s)`
+    - `0 Error(s)`
+  - Live site `bin` now contains:
+    - `DevExpress.Data.Desktop.v25.1.dll` version `25.1.5.0`
+    - `DevExpress.Sparkline.v25.1.Core.dll` version `25.1.5.0`
+    - `DevExpress.XtraGauges.v25.1.Core.dll` version `25.1.5.0`
+  - Report name uniqueness check now returns:
+    - `Project Report 2 -> 1`
+    - `Project Report 2 Clone -> 1`
+  - `Invoke-WebRequest https://qpms.orerps.com/Login.aspx?ReturnUrl=%2f` returned:
+    - `200`
+
+- Notes:
+  - The concrete missing-assembly exception was observed in the live log during clone-related report operations; after deploying the missing assemblies, a browser-side retry is still needed for final end-user confirmation of the preview window.
+
+## 2026-04-24 19:11 Europe/Istanbul - QPMS XAF middle tier server and Win client wiring
+
+- Scope:
+  - Added a dedicated XAF middle-tier server project to the classic QPMS solution.
+  - Switched the WinForms client to configuration-driven middle-tier access and removed one direct-database bypass in shared module code.
+  - Completed compile-time and runtime smoke verification for both the server host and the Windows client.
+
+- Findings:
+  - `ViewControllerCompany.Recalc()` was creating its own `XPObjectSpaceProvider` with a raw connection string, which would bypass any middle-tier path.
+  - `QPMS.Win` and the new server project both compiled before runtime was clean, but initially failed to start because core DevExpress assemblies were not being copied to the local output folders.
+  - In middle-tier mode, `Program.cs` calling `RegisterXPOAdapterProviders()` caused a startup `NullReferenceException` because the client security object had already been replaced with `ServerSecurityClient`.
+
+- Changes applied:
+  - Added new solution project:
+    - `QPMS.ApplicationServer`
+  - Added server host implementation:
+    - `QPMS.ApplicationServer/Program.cs`
+    - `QPMS.ApplicationServer/App.config`
+    - `QPMS.ApplicationServer/QPMS.ApplicationServer.csproj`
+  - Server host now:
+    - reads `ConnectionString`
+    - opens `net.tcp://localhost:1451/DataServer`
+    - creates `SecurityStrategyComplex` for `Employee` / `EmployeeRole`
+    - runs database compatibility checks before hosting WCF middle-tier services
+  - Win client now reads:
+    - `UseMiddleTier=True`
+    - `MiddleTierEndpoint=net.tcp://localhost:1451/DataServer`
+  - `QPMSWindowsFormsApplication` now creates:
+    - `WcfSecuredDataServerClient`
+    - `ServerSecurityClient`
+    - `DataServerObjectSpaceProvider`
+    when middle-tier mode is enabled.
+  - `QPMS.Win/Program.cs` now skips `RegisterXPOAdapterProviders()` when `UseMiddleTier=True`.
+  - `QPMS.Win/QPMS.Win.csproj` now copies resolved `DevExpress.*` assemblies into the local output folder after build so the desktop executable can start outside ClickOnce packaging.
+  - `QPMS.ApplicationServer/QPMS.ApplicationServer.csproj` now copies its core DevExpress references locally.
+  - `QPMS.Module/Controllers/ViewControllerCompany.cs` now uses `Application.CreateObjectSpace(typeof(BranchTimesheet))` instead of opening a separate direct SQL object space.
+
+- Verification:
+  - `QPMS.ApplicationServer` build completed with:
+    - `0 Warning(s)`
+    - `0 Error(s)`
+  - `QPMS.Win` build completed with:
+    - `0 Warning(s)`
+    - `0 Error(s)`
+  - Win build required existing project-level ClickOnce signing to be bypassed during verification with:
+    - `/p:SignManifests=false`
+  - Runtime smoke test for the server showed:
+    - `QPMS middle tier server is running.`
+    - `Endpoint: net.tcp://localhost:1451/DataServer`
+  - While keeping the server process alive, `Test-NetConnection localhost -Port 1451` returned:
+    - `TcpTestSucceeded: True`
+  - `netstat -ano | findstr 1451` showed:
+    - server `LISTENING` on `0.0.0.0:1451`
+    - an `ESTABLISHED` loopback connection between the server process and `QPMS.Win`
+  - Final client smoke test result:
+    - `ServerAlive=True`
+    - `WinAlive=True`
+
+- Notes:
+  - Repository-local runtime verification is complete for the new middle-tier path.
+  - Existing unrelated workspace changes in `QPMS.Web` and `QPMS.Module/Reports/ProjectReport.Designer.cs` were left untouched.
+
+## 2026-04-24 19:12 Europe/Istanbul - Project Report 2 empty preview root-cause and fix
+
+- Request:
+  - User reported that `Project Report 2` / the new clone preview opened but rendered mostly empty fields and tables, and asked for admin to have full visibility if the issue was permission-related.
+
+- Findings:
+  - Live XAF log for the active session showed the user was logged in as `Admin`:
+    - `CurrentUserName: Admin`
+  - Live DB confirmed `Admin` is attached to the `Administrator` role and that role is already `IsAdministrative = 1`.
+  - So the empty report was not caused by missing admin role permissions.
+  - The real blocker was a report parameter type mismatch:
+    - `Project.Oid` in `qpms2026` is `uniqueidentifier`
+    - but `QPMS.Module/Reports/ProjectReport.Designer.cs` defined the report parameter as `typeof(int)` with `ValueInfo = "0"`
+    - and the cloned in-place report `REPORT-00000024 / Project Report 2 Clone` stored the same broken metadata in its serialized XML:
+      - `Content="System.Int32"`
+      - `ValueInfo="0"`
+  - Because the report filter is `"[Oid] = ?Project"`, the parameter type mismatch let the preview UI open but left the report bound to no matching `Project` row, which explains the blank sections.
+
+- Changes applied:
+  - Source fix in `QPMS.Module/Reports/ProjectReport.Designer.cs`:
+    - changed `this.Project.Type` from `typeof(int)` to `typeof(System.Guid)`
+    - changed `this.Project.ValueInfo` from `"0"` to `"00000000-0000-0000-0000-000000000000"`
+  - Live DB fix for the existing clone `REPORT-00000024`:
+    - extracted serialized report XML from `ReportDataV2.Content`
+    - replaced `Content="System.Int32"` with `Content="System.Guid"`
+    - replaced `ValueInfo="0"` with `ValueInfo="00000000-0000-0000-0000-000000000000"`
+    - wrote the updated bytes back to `ReportDataV2.Content`
+    - updated `QPMSReport.UpdatedOn`, `UpdatedBy`, and incremented `Version` to `7`
+
+- Verification:
+  - Query confirmed the clone now stores:
+    - `HasGuid = True`
+    - `HasInt32 = False`
+    - `HasGuidEmpty = True`
+  - Rebuilt `QPMS.Web` in `Release` and the dependency chain rebuilt `QPMS.Module` successfully with:
+    - `0 Warning(s)`
+    - `0 Error(s)`
+  - Deployed updated `QPMS.Module.dll` to:
+    - `C:\Plesk Vhosts\orerps.com\qpms.orerps.com\bin\QPMS.Module.dll`
+  - Recycled IIS app pool:
+    - `qpms.orerps.com(domain)(4.0)(pool)`
+  - Post-deploy health check:
+    - `https://qpms.orerps.com/Login.aspx?ReturnUrl=%2f` returned `200`
+
+- Notes:
+  - This fix corrects both the compiled predefined report and the existing in-place clone.
+  - Future clones created from the predefined `Project_Report` should now inherit the correct `Guid` parameter type instead of the broken `int` type.
+
+## 2026-04-24 19:31 Europe/Istanbul - Project Report 2 Clone list XML error follow-up
+
+- Request:
+  - User reopened `Project Report 2 Clone` and the report list page showed:
+    - `Data at the root level is invalid. Line 1, position 1.`
+
+- Findings:
+  - The active `REPORT-00000024` row in `ReportDataV2` was still an in-place report:
+    - `IsInplaceReport = True`
+  - Its live `Content` bytes were valid UTF-8 XML and loaded successfully with:
+    - `System.Xml.XmlDocument.Load(...)`
+    - `XtraReport.LoadLayoutFromXml(...)`
+  - The key mismatch was inside the serialized report layout metadata:
+    - clone `ControlType` still referenced the old module version:
+      - `QPMS.Module, Version=1.0.9610.24249`
+    - current deployed module version is:
+      - `QPMS.Module, Version=1.0.9610.34526`
+  - A separately saved temporary file from the earlier manual patch still had a double UTF-8 BOM, but that stale file was local-only and not the current live DB state.
+  - So the practical recovery path was to replace the clone layout with a freshly serialized report generated from the current code instead of trying to keep patching the old in-place XML.
+
+- Changes applied:
+  - Loaded the current compiled `QPMS.Module.Reports.Project_Report` from `QPMS.Web\\bin`.
+  - Generated a clean layout file:
+    - `build/project-report-from-code.repx`
+  - Replaced `REPORT-00000024` `ReportDataV2.Content` with the generated bytes.
+  - Incremented the cloned report row version and updated `UpdatedOn`.
+  - Recycled IIS app pool again to clear any cached report metadata:
+    - `qpms.orerps.com(domain)(4.0)(pool)`
+
+- Verification:
+  - Freshly stored clone content now starts with a single BOM and XML declaration:
+    - `EF-BB-BF-3C-3F-78-6D-6C...`
+  - Stored clone content now contains the corrected metadata:
+    - `ControlType="QPMS.Module.Reports.Project_Report, QPMS.Module, Version=1.0.9610.34526, ..."`
+    - `Content="System.Guid"`
+    - `ValueInfo="00000000-0000-0000-0000-000000000000"`
+  - Local validation against the post-update clone content succeeded with:
+    - `XmlDocument.Load(...)`
+    - `XtraReport.LoadLayoutFromXml(...)`
+  - Post-recycle site health check:
+    - `https://qpms.orerps.com/Login.aspx?ReturnUrl=%2f` returned `200`
+
+- Notes:
+  - This follow-up indicates the blocker was not admin visibility or security permissions.
+  - The clone now uses a clean layout serialized from the current report code, which is safer than carrying forward patched XML from the earlier broken clone snapshot.

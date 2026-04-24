@@ -4195,8 +4195,8 @@
             // 
             this.Project.Description = "Project";
             this.Project.Name = "Project";
-            this.Project.Type = typeof(int);
-            this.Project.ValueInfo = "0";
+            this.Project.Type = typeof(System.Guid);
+            this.Project.ValueInfo = "00000000-0000-0000-0000-000000000000";
             dynamicListLookUpSettings1.DataSource = this.collectionDataSource1;
             dynamicListLookUpSettings1.DisplayMember = "Name";
             dynamicListLookUpSettings1.SortOrder = DevExpress.Data.ColumnSortOrder.Descending;

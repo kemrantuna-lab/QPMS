@@ -1,0 +1,1234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="25.1.5.0" Ref="1" ControlType="QPMS.Module.Reports.Project_Report, QPMS.Module, Version=1.0.9610.24249, Culture=neutral, PublicKeyToken=null" Dpi="254" DisplayName="Project Report - Traceability - Serial + Lot + Production Date from Order No " SnapGridSize="25" ReportUnit="TenthsOfAMillimeter" Landscape="true" Margins="100, 100, 100, 100" PaperKind="A4" PageWidthF="2970" PageHeightF="2100" Version="25.1" FilterString="[Oid] = ?Project" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Extensions>
+    <Item1 Ref="2" Key="DataSerializationExtension" Value="XtraReport" />
+    <Item2 Ref="3" Key="DataEditorExtension" Value="XtraReport" />
+    <Item3 Ref="4" Key="ParameterEditorExtension" Value="XtraReport" />
+  </Extensions>
+  <Parameters>
+    <Item1 Ref="7" Description="Project" ValueSourceSettings="#Ref-5" ValueInfo="00000000-0000-0000-0000-000000000000" Name="Project" Type="#Ref-6" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="8" ControlType="TopMarginBand" Name="TopMargin" Dpi="254" BorderColor="Transparent">
+      <StylePriority Ref="9" UseBorderColor="false" />
+    </Item1>
+    <Item2 Ref="10" ControlType="BottomMarginBand" Name="BottomMargin" Dpi="254">
+      <Controls>
+        <Item1 Ref="11" ControlType="XRPageInfo" Name="pageInfo1" Dpi="254" PageInfo="DateTime" SizeF="1359,58" LocationFloat="13,13" StyleName="PageInfo" />
+        <Item2 Ref="12" ControlType="XRPageInfo" Name="pageInfo2" Dpi="254" TextFormatString="Page {0} of {1}" TextAlignment="TopRight" SizeF="1359,58" LocationFloat="1398,13" StyleName="PageInfo" />
+      </Controls>
+    </Item2>
+    <Item3 Ref="13" ControlType="ReportHeaderBand" Name="ReportHeader" Dpi="254" HeightF="1980.669">
+      <Controls>
+        <Item1 Ref="14" ControlType="XRPictureBox" Name="xrPictureBox1" Dpi="254" Sizing="ZoomImage" SizeF="815.6223,230.6284" LocationFloat="1.239287,0">
+          <ExpressionBindings>
+            <Item1 Ref="15" EventName="BeforePrint" PropertyName="ImageSource" Expression="[Branch].[Company].[Logo]" />
+          </ExpressionBindings>
+        </Item1>
+        <Item2 Ref="16" ControlType="XRLabel" Name="label107" Dpi="254" Multiline="true" Text="label107" SizeF="878.1596,58.42004" LocationFloat="555.2964,1725.893" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="17" EventName="BeforePrint" PropertyName="Text" Expression="[TotalTHH]" />
+          </ExpressionBindings>
+        </Item2>
+        <Item3 Ref="18" ControlType="XRLabel" Name="label106" Dpi="254" Multiline="true" Text="Total Duration (Holidays)" SizeF="488.8406,58.41998" LocationFloat="66.45586,1725.893" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item4 Ref="19" ControlType="XRLabel" Name="label44" Dpi="254" Multiline="true" Text="Customer Claim Number" SizeF="488.8406,58.41998" LocationFloat="63.45543,1147.736" StyleName="GroupFooterBackground3" Padding="5,5,0,0,254" />
+        <Item5 Ref="20" ControlType="XRLabel" Name="label40" Dpi="254" Multiline="true" Text="DAILY RESULTS REPORT" TextAlignment="MiddleCenter" SizeF="2770.001,124.3459" LocationFloat="0,289.0485" StyleName="DetailCaption1" Font="Arial, 24pt, style=Bold" Padding="5,5,0,0,254">
+          <StylePriority Ref="21" UseFont="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="22" ControlType="XRLine" Name="line9" Dpi="254" SizeF="2769.999,58.42001" LocationFloat="0,230.6284" BorderColor="Transparent">
+          <StylePriority Ref="23" UseBorderColor="false" />
+        </Item6>
+        <Item7 Ref="24" ControlType="XRLine" Name="line1" Dpi="254" SizeF="2769.999,58.42001" LocationFloat="0,413.3944" BorderColor="Transparent">
+          <StylePriority Ref="25" UseBorderColor="false" />
+        </Item7>
+        <Item8 Ref="26" ControlType="XRBarCode" Name="barCode1" Dpi="254" Module="5.08" AutoModule="true" SizeF="670.9829,230.6284" LocationFloat="2099.018,0" Padding="26,26,0,0,254" BorderColor="Transparent">
+          <Symbology Ref="27" Name="PDF417" Rows="9" />
+          <ExpressionBindings>
+            <Item1 Ref="28" EventName="BeforePrint" PropertyName="Text" Expression="Ascii('[Code]')+Ascii(' ')+Ascii('[Name]')+Ascii(' ')+Ascii('[Start]')" />
+          </ExpressionBindings>
+          <StylePriority Ref="29" UseBorderColor="false" />
+        </Item8>
+        <Item9 Ref="30" ControlType="XRLine" Name="line8" Dpi="254" SizeF="2769.999,58.42004" LocationFloat="0,1805.409" />
+        <Item10 Ref="31" ControlType="XRLabel" Name="label105" Dpi="254" Multiline="true" Text="RNOK" SizeF="488.8406,58.41998" LocationFloat="66.45586,1492.213" StyleName="GroupData2" BackColor="255,255,192,0" Padding="5,5,0,0,254">
+          <StylePriority Ref="32" UseBackColor="false" />
+        </Item10>
+        <Item11 Ref="33" ControlType="XRLabel" Name="label104" Dpi="254" Multiline="true" Text="ROK" SizeF="488.8406,58.41998" LocationFloat="66.45586,1433.793" StyleName="GroupData2" BackColor="255,146,208,80" Padding="5,5,0,0,254">
+          <StylePriority Ref="34" UseBackColor="false" />
+        </Item11>
+        <Item12 Ref="35" ControlType="XRLabel" Name="label103" Dpi="254" Multiline="true" Text="NOK" SizeF="488.8406,58.41998" LocationFloat="66.45586,1375.373" StyleName="GroupData2" BackColor="255,240,0,0" Padding="5,5,0,0,254">
+          <StylePriority Ref="36" UseBackColor="false" />
+        </Item12>
+        <Item13 Ref="37" ControlType="XRLabel" Name="label102" Dpi="254" Multiline="true" Text="OK" SizeF="488.8406,58.41998" LocationFloat="64.4556,1316.953" StyleName="GroupData2" BackColor="255,0,176,80" Padding="5,5,0,0,254">
+          <StylePriority Ref="38" UseBackColor="false" />
+        </Item13>
+        <Item14 Ref="39" ControlType="XRLabel" Name="label101" Dpi="254" Multiline="true" Text="Total Duration (Extra Hours)" SizeF="488.8406,58.41998" LocationFloat="66.45586,1667.473" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item15 Ref="40" ControlType="XRLabel" Name="label100" Dpi="254" Multiline="true" Text="Total Duration (Normal Hours)" SizeF="488.8406,58.41998" LocationFloat="64.4556,1609.053" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item16 Ref="41" ControlType="XRLabel" Name="label99" Dpi="254" Multiline="true" Text="Total Duration" TextAlignment="MiddleLeft" SizeF="488.8406,58.41998" LocationFloat="64.4556,1550.633" StyleName="GroupData2" Padding="5,5,0,0,254">
+          <StylePriority Ref="42" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="43" ControlType="XRLabel" Name="label98" Dpi="254" Multiline="true" Text="label98" TextAlignment="TopLeft" SizeF="878.1596,58.42004" LocationFloat="555.2964,1375.373" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <Summary Ref="44" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="45" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([PTFTraceabilities].[NOK])" />
+          </ExpressionBindings>
+          <StylePriority Ref="46" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="47" ControlType="XRLabel" Name="label97" Dpi="254" Multiline="true" Text="label97" TextAlignment="TopLeft" SizeF="883.1592,58.42004" LocationFloat="555.2963,1492.213" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <Summary Ref="48" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="49" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([PTFTraceabilities].[RNOK])" />
+          </ExpressionBindings>
+          <StylePriority Ref="50" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="51" ControlType="XRLabel" Name="label96" Dpi="254" Multiline="true" Text="label96" TextAlignment="TopLeft" SizeF="883.1591,58.42004" LocationFloat="555.2964,1433.793" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <Summary Ref="52" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="53" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([PTFTraceabilities].[ROK])" />
+          </ExpressionBindings>
+          <StylePriority Ref="54" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="55" ControlType="XRLabel" Name="label95" Dpi="254" Multiline="true" Text="label95" TextAlignment="TopLeft" SizeF="880.1599,58.41998" LocationFloat="553.2962,1316.953" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <Summary Ref="56" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="57" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([PTFTraceabilities].[OK])" />
+          </ExpressionBindings>
+          <StylePriority Ref="58" UseTextAlignment="false" />
+        </Item20>
+        <Item21 Ref="59" ControlType="XRLabel" Name="label94" Dpi="254" TextFormatString="{0:#.00}" Multiline="true" Text="label94" TextAlignment="MiddleLeft" SizeF="878.1597,58.42004" LocationFloat="555.2963,1667.473" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <Summary Ref="60" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="61" EventName="BeforePrint" PropertyName="Text" Expression="[TotalTEH]" />
+          </ExpressionBindings>
+          <StylePriority Ref="62" UseTextAlignment="false" />
+        </Item21>
+        <Item22 Ref="63" ControlType="XRLabel" Name="label93" Dpi="254" TextFormatString="{0:#.00}" Multiline="true" Text="label93" TextAlignment="MiddleLeft" SizeF="878.1597,58.42004" LocationFloat="555.2963,1550.633" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <Summary Ref="64" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="65" EventName="BeforePrint" PropertyName="Text" Expression="[TotalTEH]+[TotalTHH]+[TotalTNH]" />
+          </ExpressionBindings>
+          <StylePriority Ref="66" UseTextAlignment="false" />
+        </Item22>
+        <Item23 Ref="67" ControlType="XRLabel" Name="label92" Dpi="254" TextFormatString="{0:#.00}" Multiline="true" Text="label92" TextAlignment="MiddleLeft" SizeF="878.1599,58.42004" LocationFloat="555.2963,1609.053" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <Summary Ref="68" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="69" EventName="BeforePrint" PropertyName="Text" Expression="[TotalTNH]" />
+          </ExpressionBindings>
+          <StylePriority Ref="70" UseTextAlignment="false" />
+        </Item23>
+        <Item24 Ref="71" ControlType="XRChart" Name="chart4" Dpi="254" SizeF="1228.622,822.3955" LocationFloat="1541.377,471.8143" BorderColor="Black" Borders="None">
+          <Chart Ref="72">
+            <DataContainer Ref="73" ValidateDataMembers="true">
+              <SeriesSerializable>
+                <Item1 Ref="74" Name="OK" SeriesID="0" ArgumentDataMember="PTFTraceabilities.PartNumber.VisiblePartNumber" ValueDataMembersSerializable="PTFTraceabilities.OK">
+                  <View Ref="75" AggregateFunction="Sum" Color="255,0,176,80" TypeNameSerializable="RadarPointSeriesView" />
+                </Item1>
+                <Item2 Ref="76" Name="NOK" SeriesID="1" ArgumentDataMember="PTFTraceabilities.PartNumber.VisiblePartNumber" ValueDataMembersSerializable="PTFTraceabilities.NOK">
+                  <View Ref="77" AggregateFunction="Sum" Color="255,240,0,0" TypeNameSerializable="RadarPointSeriesView">
+                    <PointMarkerOptions Ref="78" Kind="Cross" />
+                  </View>
+                </Item2>
+                <Item3 Ref="79" Name="ROK" SeriesID="2" ArgumentDataMember="PTFTraceabilities.PartNumber.VisiblePartNumber" ValueDataMembersSerializable="PTFTraceabilities.ROK">
+                  <View Ref="80" AggregateFunction="Sum" Color="255,146,208,80" TypeNameSerializable="RadarPointSeriesView">
+                    <PointMarkerOptions Ref="81" Size="10" Kind="Star" />
+                  </View>
+                </Item3>
+                <Item4 Ref="82" Name="RNOK" SeriesID="3">
+                  <View Ref="83" AggregateFunction="Sum" Color="255,255,192,0" TypeNameSerializable="RadarPointSeriesView">
+                    <PointMarkerOptions Ref="84" Size="12" Kind="Diamond" />
+                  </View>
+                </Item4>
+              </SeriesSerializable>
+              <SeriesTemplate Ref="85">
+                <View Ref="86" TypeNameSerializable="RadarPointSeriesView" />
+              </SeriesTemplate>
+            </DataContainer>
+            <Legend Ref="87" />
+            <OptionsPrint Ref="88" ImageFormat="Metafile" />
+          </Chart>
+        </Item24>
+        <Item25 Ref="89" ControlType="XRLabel" Name="label91" Dpi="254" Multiline="true" Text="Actual Status of Operation" SizeF="488.8406,58.41998" LocationFloat="64.4556,822.334" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item26 Ref="90" ControlType="XRLabel" Name="label90" Dpi="254" Multiline="true" Text="label90" SizeF="885.1595,58.41998" LocationFloat="553.2962,822.334" StyleName="GroupCaption2" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="91" EventName="BeforePrint" PropertyName="Text" Expression="[State]" />
+          </ExpressionBindings>
+        </Item26>
+        <Item27 Ref="92" ControlType="XRLabel" Name="label89" Dpi="254" Multiline="true" Text="Customer Logo" TextAlignment="TopLeft" SizeF="488.8406,150.1422" LocationFloat="64.45537,997.5938" StyleName="GroupFooterBackground3" Padding="5,5,0,0,254">
+          <StylePriority Ref="93" UseTextAlignment="false" />
+        </Item27>
+        <Item28 Ref="94" ControlType="XRPictureBox" Name="pictureBox3" Dpi="254" Sizing="Squeeze" SizeF="885.1597,150.1422" LocationFloat="553.296,997.5938">
+          <ExpressionBindings>
+            <Item1 Ref="95" EventName="BeforePrint" PropertyName="ImageSource" Expression="[Customer].[Logo]" />
+          </ExpressionBindings>
+        </Item28>
+        <Item29 Ref="96" ControlType="XRLabel" Name="label88" Dpi="254" Multiline="true" Text="Branch Name" SizeF="488.8406,58.41998" LocationFloat="62.45529,471.8143" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item30 Ref="97" ControlType="XRLabel" Name="label87" Dpi="254" Multiline="true" Text="Default Reporting Language" SizeF="488.8406,58.41998" LocationFloat="64.45551,763.9141" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item31 Ref="98" ControlType="XRLabel" Name="label85" Dpi="254" Multiline="true" Text="label85" SizeF="882.1602,58.42004" LocationFloat="551.2959,471.8143" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="99" EventName="BeforePrint" PropertyName="Text" Expression="[Branch].[Name]" />
+          </ExpressionBindings>
+        </Item31>
+        <Item32 Ref="100" ControlType="XRLabel" Name="label84" Dpi="254" Multiline="true" Text="Customer Type" SizeF="488.8406,58.41998" LocationFloat="64.45551,880.754" StyleName="GroupFooterBackground3" Padding="5,5,0,0,254" />
+        <Item33 Ref="101" ControlType="XRLabel" Name="label83" Dpi="254" Multiline="true" Text="label83" SizeF="882.1596,58.41998" LocationFloat="553.296,880.754" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="102" EventName="BeforePrint" PropertyName="Text" Expression="[CustomerType].[Name]" />
+          </ExpressionBindings>
+        </Item33>
+        <Item34 Ref="103" ControlType="XRLabel" Name="label82" Dpi="254" Multiline="true" Text="Customer" SizeF="488.8406,58.41998" LocationFloat="64.45537,939.1739" StyleName="GroupFooterBackground3" Padding="5,5,0,0,254" />
+        <Item35 Ref="104" ControlType="XRLabel" Name="label81" Dpi="254" Multiline="true" Text="label81" SizeF="883.1599,58.41998" LocationFloat="553.296,939.1739" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="105" EventName="BeforePrint" PropertyName="Text" Expression="[Customer].[Code]" />
+          </ExpressionBindings>
+        </Item35>
+        <Item36 Ref="106" ControlType="XRLabel" Name="label80" Dpi="254" Multiline="true" Text="End Date (Planned)" SizeF="488.8406,58.41998" LocationFloat="64.45551,705.4941" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item37 Ref="107" ControlType="XRLabel" Name="label79" Dpi="254" Multiline="true" Text="Start Date" SizeF="488.8406,58.41998" LocationFloat="63.45543,647.0742" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item38 Ref="108" ControlType="XRLabel" Name="label78" Dpi="254" TextFormatString="{0:d}" Multiline="true" Text="label78" SizeF="882.1599,58.41998" LocationFloat="553.296,705.4941" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="109" EventName="BeforePrint" PropertyName="Text" Expression="[End]" />
+          </ExpressionBindings>
+        </Item38>
+        <Item39 Ref="110" ControlType="XRLabel" Name="label77" Dpi="254" TextFormatString="{0:d}" Multiline="true" Text="label77" SizeF="883.1597,58.41998" LocationFloat="552.296,647.0742" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="111" EventName="BeforePrint" PropertyName="Text" Expression="[Start]" />
+          </ExpressionBindings>
+        </Item39>
+        <Item40 Ref="112" ControlType="XRLabel" Name="label76" Dpi="254" Multiline="true" Text="Name" SizeF="488.8406,58.41998" LocationFloat="64.45544,588.6543" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item41 Ref="113" ControlType="XRLabel" Name="label75" Dpi="254" Multiline="true" Text="Code" SizeF="488.8406,58.41998" LocationFloat="63.45536,530.2344" StyleName="GroupData2" Padding="5,5,0,0,254" />
+        <Item42 Ref="114" ControlType="XRLabel" Name="label74" Dpi="254" Multiline="true" Text="label74" SizeF="883.1595,58.41998" LocationFloat="552.296,530.2344" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="115" EventName="BeforePrint" PropertyName="Text" Expression="[Code]" />
+          </ExpressionBindings>
+        </Item42>
+        <Item43 Ref="116" ControlType="XRTableOfContents" Name="tableOfContents1" Dpi="254" LocationFloat="0,1863.829">
+          <LevelTitle Ref="117" Text="Title" Height="58.42" Padding="0,0,0,0,254" />
+          <LevelDefault Ref="118" Height="58.42" Padding="0,0,0,0,254" />
+        </Item43>
+        <Item44 Ref="119" ControlType="XRLabel" Name="label64" Dpi="254" Multiline="true" Text="label64" Bookmark="Project Information" SizeF="882.1597,58.42001" LocationFloat="553.296,588.6543" StyleName="DetailData3_Odd" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="120" EventName="BeforePrint" PropertyName="Text" Expression="[Name]" />
+          </ExpressionBindings>
+        </Item44>
+      </Controls>
+    </Item3>
+    <Item4 Ref="121" ControlType="DetailBand" Name="Detail" Dpi="254" PageBreak="AfterBand" HeightF="614.2103" KeepTogether="true">
+      <Controls>
+        <Item1 Ref="122" ControlType="XRTable" Name="table1" Dpi="254" SizeF="2770,142.24" LocationFloat="0,0">
+          <Rows>
+            <Item1 Ref="123" ControlType="XRTableRow" Name="ProjectInformation" Dpi="254" Weight="0.5">
+              <Cells>
+                <Item1 Ref="124" ControlType="XRTableCell" Name="tableCell1" Dpi="254" Weight="0.075301953257206108" Text="Branch" StyleName="DetailCaption1" Borders="None">
+                  <StylePriority Ref="125" UseBorders="false" />
+                </Item1>
+                <Item2 Ref="126" ControlType="XRTableCell" Name="tableCell2" Dpi="254" Weight="0.16521371656967523" Text="Customer" StyleName="DetailCaption1" />
+                <Item3 Ref="127" ControlType="XRTableCell" Name="tableCell5" Dpi="254" Weight="0.33089942366046915" Text="Description" StyleName="DetailCaption1" />
+                <Item4 Ref="128" ControlType="XRTableCell" Name="tableCell6" Dpi="254" Weight="0.1092404802783732" Text="End" StyleName="DetailCaption1" />
+                <Item5 Ref="129" ControlType="XRTableCell" Name="tableCell8" Dpi="254" Weight="0.26290870969476254" Text="Name" StyleName="DetailCaption1" />
+                <Item6 Ref="130" ControlType="XRTableCell" Name="tableCell10" Dpi="254" Weight="0.05643572204810187" Text="Start" StyleName="DetailCaption1" />
+              </Cells>
+            </Item1>
+            <Item2 Ref="131" ControlType="XRTableRow" Name="tableRow2" Dpi="254" Weight="0.5">
+              <Cells>
+                <Item1 Ref="132" ControlType="XRTableCell" Name="tableCell11" Dpi="254" Weight="0.075301953257206108" StyleName="DetailData1" Borders="None">
+                  <ExpressionBindings>
+                    <Item1 Ref="133" EventName="BeforePrint" PropertyName="Text" Expression="[Branch].[Code]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="134" UseBorders="false" />
+                </Item1>
+                <Item2 Ref="135" ControlType="XRTableCell" Name="tableCell12" Dpi="254" Weight="0.16521371656967523" StyleName="DetailData1">
+                  <ExpressionBindings>
+                    <Item1 Ref="136" EventName="BeforePrint" PropertyName="Text" Expression="[Customer].[Code]" />
+                  </ExpressionBindings>
+                </Item2>
+                <Item3 Ref="137" ControlType="XRTableCell" Name="tableCell15" Dpi="254" Weight="0.33089942366046915" StyleName="DetailData1">
+                  <ExpressionBindings>
+                    <Item1 Ref="138" EventName="BeforePrint" PropertyName="Text" Expression="[Description]" />
+                  </ExpressionBindings>
+                </Item3>
+                <Item4 Ref="139" ControlType="XRTableCell" Name="tableCell16" Dpi="254" Weight="0.1092404802783732" StyleName="DetailData1">
+                  <ExpressionBindings>
+                    <Item1 Ref="140" EventName="BeforePrint" PropertyName="Text" Expression="[End]" />
+                  </ExpressionBindings>
+                </Item4>
+                <Item5 Ref="141" ControlType="XRTableCell" Name="tableCell18" Dpi="254" Weight="0.26290870969476254" StyleName="DetailData1">
+                  <ExpressionBindings>
+                    <Item1 Ref="142" EventName="BeforePrint" PropertyName="Text" Expression="[Name]" />
+                  </ExpressionBindings>
+                </Item5>
+                <Item6 Ref="143" ControlType="XRTableCell" Name="tableCell20" Dpi="254" Weight="0.05643572204810187" StyleName="DetailData1">
+                  <ExpressionBindings>
+                    <Item1 Ref="144" EventName="BeforePrint" PropertyName="Text" Expression="[Start]" />
+                  </ExpressionBindings>
+                </Item6>
+              </Cells>
+            </Item2>
+          </Rows>
+        </Item1>
+      </Controls>
+    </Item4>
+    <Item5 Ref="145" ControlType="DetailReportBand" Name="ExternalUsers" Dpi="254" Level="0" DataMember="Members" DataSource="#Ref-0" PageBreak="AfterBand" Tag_type="System.String" Tag=".">
+      <Bands>
+        <Item1 Ref="146" ControlType="GroupHeaderBand" Name="GroupHeader1" Dpi="254" GroupUnion="WithFirstDetail" HeightF="332.2875">
+          <Controls>
+            <Item1 Ref="147" ControlType="XRLabel" Name="label67" Dpi="254" Multiline="true" Text="This section is dedicated to project team members who does have access to ORCA Business Intelligence Platform.&#xD;&#xA;&#xD;&#xA;User who does not have access might refer to ORCA Project reponsible to receive initial password to reach his/her projects.&#xD;&#xA;&#xD;&#xA;To reach reports visit https://obi.orcaqs.com and login with your credentials." SizeF="2770,177.7475" LocationFloat="0,58.41995" Font="Arial, 6.75pt" Padding="5,5,0,0,254">
+              <StylePriority Ref="148" UseFont="false" />
+            </Item1>
+            <Item2 Ref="149" ControlType="XRLabel" Name="label60" Dpi="254" Multiline="true" Text="Project Team" Bookmark="Project Team" SizeF="2770,58.42" LocationFloat="0,0" StyleName="GroupData2" Font="Arial, 12.75pt, style=Bold" ForeColor="White" BackColor="255,84,141,212" Padding="5,5,0,0,254" BorderColor="Black">
+              <StylePriority Ref="150" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" />
+            </Item2>
+            <Item3 Ref="151" ControlType="XRTable" Name="table2" Dpi="254" SizeF="2770,71.12" LocationFloat="0,236.1675">
+              <Rows>
+                <Item1 Ref="152" ControlType="XRTableRow" Name="tableRow3" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="153" ControlType="XRTableCell" Name="tableCell21" Dpi="254" Weight="0.66695442061992327" Text="Display Name" StyleName="DetailCaption2" Borders="None">
+                      <StylePriority Ref="154" UseBorders="false" />
+                    </Item1>
+                    <Item2 Ref="155" ControlType="XRTableCell" Name="tableCell22" Dpi="254" Weight="0.33304557938007673" Text="Email" StyleName="DetailCaption2" />
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item3>
+          </Controls>
+        </Item1>
+        <Item2 Ref="156" ControlType="DetailBand" Name="Detail1" Dpi="254" HeightF="63.42">
+          <Controls>
+            <Item1 Ref="157" ControlType="XRTable" Name="table3" Dpi="254" SizeF="2770,63.42" LocationFloat="0,0" OddStyleName="DetailData3_Odd">
+              <Rows>
+                <Item1 Ref="158" ControlType="XRTableRow" Name="tableRow4" Dpi="254" Weight="11.683999633789062">
+                  <Cells>
+                    <Item1 Ref="159" ControlType="XRTableCell" Name="tableCell23" Dpi="254" Weight="0.66695442061992327" StyleName="DetailData2" Borders="None">
+                      <ExpressionBindings>
+                        <Item1 Ref="160" EventName="BeforePrint" PropertyName="Text" Expression="[Members].[Name]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="161" UseBorders="false" />
+                    </Item1>
+                    <Item2 Ref="162" ControlType="XRTableCell" Name="tableCell24" Dpi="254" Weight="0.33304557938007673" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="163" EventName="BeforePrint" PropertyName="Text" Expression="[Members].[EMail]" />
+                      </ExpressionBindings>
+                    </Item2>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item1>
+          </Controls>
+        </Item2>
+      </Bands>
+      <ReportPrintOptions Ref="164" PrintOnEmptyDataSource="false" />
+    </Item5>
+    <Item6 Ref="165" ControlType="DetailReportBand" Name="ProjectLocations" Dpi="254" Level="1" DataMember="Locations" DataSource="#Ref-0" PageBreak="AfterBand">
+      <Bands>
+        <Item1 Ref="166" ControlType="GroupHeaderBand" Name="GroupHeader2" Dpi="254" GroupUnion="WithFirstDetail" HeightF="205.021">
+          <Controls>
+            <Item1 Ref="167" ControlType="XRLabel" Name="label66" Dpi="254" Multiline="true" Text="This section is dedicated to locations that activity is being performed." SizeF="2770,71.11995" LocationFloat="0,58.41995" Font="Arial, 6.75pt" Padding="5,5,0,0,254">
+              <StylePriority Ref="168" UseFont="false" />
+            </Item1>
+            <Item2 Ref="169" ControlType="XRLabel" Name="label61" Dpi="254" Multiline="true" Text="Project Locations" Bookmark="Project Locations" SizeF="2770,58.42" LocationFloat="0,0" StyleName="GroupData2" Font="Arial, 12.75pt, style=Bold" ForeColor="White" BackColor="255,84,141,212" Padding="5,5,0,0,254" BorderColor="Black">
+              <StylePriority Ref="170" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" />
+            </Item2>
+            <Item3 Ref="171" ControlType="XRTable" Name="table4" Dpi="254" SizeF="2770,71.12" LocationFloat="0,129.5399">
+              <Rows>
+                <Item1 Ref="172" ControlType="XRTableRow" Name="tableRow5" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="173" ControlType="XRTableCell" Name="tableCell25" Dpi="254" Weight="0.25849419879569041" Text="Code" StyleName="DetailCaption2" Borders="None">
+                      <StylePriority Ref="174" UseBorders="false" />
+                    </Item1>
+                    <Item2 Ref="175" ControlType="XRTableCell" Name="tableCell27" Dpi="254" Weight="0.2740649722543434" Text="Name" StyleName="DetailCaption2" />
+                    <Item3 Ref="176" ControlType="XRTableCell" Name="tableCell26" Dpi="254" Weight="0.46744085098431859" Text="Description" StyleName="DetailCaption2" />
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item3>
+          </Controls>
+        </Item1>
+        <Item2 Ref="177" ControlType="DetailBand" Name="Detail2" Dpi="254" HeightF="63.42">
+          <Controls>
+            <Item1 Ref="178" ControlType="XRTable" Name="table5" Dpi="254" SizeF="2770,63.42" LocationFloat="0,0" OddStyleName="DetailData3_Odd">
+              <Rows>
+                <Item1 Ref="179" ControlType="XRTableRow" Name="tableRow6" Dpi="254" Weight="11.683999633789062">
+                  <Cells>
+                    <Item1 Ref="180" ControlType="XRTableCell" Name="tableCell28" Dpi="254" Weight="0.25849419879569041" StyleName="DetailData2" Borders="None">
+                      <ExpressionBindings>
+                        <Item1 Ref="181" EventName="BeforePrint" PropertyName="Text" Expression="[Locations].[Code]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="182" UseBorders="false" />
+                    </Item1>
+                    <Item2 Ref="183" ControlType="XRTableCell" Name="tableCell30" Dpi="254" Weight="0.274064950219991" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="184" EventName="BeforePrint" PropertyName="Text" Expression="[Locations].[Name]" />
+                      </ExpressionBindings>
+                    </Item2>
+                    <Item3 Ref="185" ControlType="XRTableCell" Name="tableCell29" Dpi="254" Weight="0.46744085098431859" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="186" EventName="BeforePrint" PropertyName="Text" Expression="[Locations].[Description]" />
+                      </ExpressionBindings>
+                    </Item3>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item1>
+          </Controls>
+        </Item2>
+      </Bands>
+    </Item6>
+    <Item7 Ref="187" ControlType="DetailReportBand" Name="ProjectPartNumbers" Dpi="254" Level="2" DataMember="Parts" DataSource="#Ref-0" PageBreak="AfterBand">
+      <Bands>
+        <Item1 Ref="188" ControlType="GroupHeaderBand" Name="GroupHeader3" Dpi="254" GroupUnion="WithFirstDetail" HeightF="200.6599">
+          <Controls>
+            <Item1 Ref="189" ControlType="XRLabel" Name="label65" Dpi="254" Multiline="true" Text="This section is dedicated to project part numbers. Information is used for aligning for all parties involved the part numbers.&#xD;&#xA;By default ORCA systems use &quot;Visible Part Number&quot; to distinguish related project items." SizeF="2770,71.11995" LocationFloat="0,58.41995" Font="Arial, 6.75pt" Padding="5,5,0,0,254">
+              <StylePriority Ref="190" UseFont="false" />
+            </Item1>
+            <Item2 Ref="191" ControlType="XRLabel" Name="label1" Dpi="254" Multiline="true" Text="Project Part Numbers" Bookmark="Project Part Numbers" SizeF="2770,58.42" LocationFloat="0,0" Font="Arial, 12.75pt, style=Bold" ForeColor="White" BackColor="255,84,141,212" Padding="5,5,0,0,254" BorderColor="Black">
+              <StylePriority Ref="192" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" />
+            </Item2>
+            <Item3 Ref="193" ControlType="XRTable" Name="table6" Dpi="254" SizeF="2770.001,71.12" LocationFloat="0,129.5397">
+              <Rows>
+                <Item1 Ref="194" ControlType="XRTableRow" Name="tableRow7" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="195" ControlType="XRTableCell" Name="labelPartNumberVisiblePartNumber" Dpi="254" Weight="0.17502028262141808" Text="Visible Part Number" StyleName="DetailCaption2" />
+                    <Item2 Ref="196" ControlType="XRTableCell" Name="labelPartNumberOEM" Dpi="254" Weight="0.15503419951841718" Text="OEM Part Number" StyleName="DetailCaption2" />
+                    <Item3 Ref="197" ControlType="XRTableCell" Name="labelPartNameOEM" Dpi="254" Weight="0.13780767668025157" Text="OEM Part Name" StyleName="DetailCaption2" />
+                    <Item4 Ref="198" ControlType="XRTableCell" Name="labelPartNumberSupplierPartNumber" Dpi="254" Weight="0.1877088415923962" Text="Supplier Part Number" StyleName="DetailCaption2" />
+                    <Item5 Ref="199" ControlType="XRTableCell" Name="labelPartNumberSupplirPartNamee" Dpi="254" Weight="0.17048228570270194" Text="Supplier Part Name" StyleName="DetailCaption2" />
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item3>
+          </Controls>
+        </Item1>
+        <Item2 Ref="200" ControlType="DetailBand" Name="Detail3" Dpi="254" HeightF="63.42">
+          <Controls>
+            <Item1 Ref="201" ControlType="XRTable" Name="table7" Dpi="254" SizeF="2769.999,63.42" LocationFloat="0,0" OddStyleName="DetailData3_Odd">
+              <Rows>
+                <Item1 Ref="202" ControlType="XRTableRow" Name="tableRow8" Dpi="254" Weight="11.683999633789062">
+                  <Cells>
+                    <Item1 Ref="203" ControlType="XRTableCell" Name="tableCell44" Dpi="254" Weight="0.17502027160424188" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="204" EventName="BeforePrint" PropertyName="Text" Expression="[Parts].[Name]" />
+                      </ExpressionBindings>
+                    </Item1>
+                    <Item2 Ref="205" ControlType="XRTableCell" Name="tableCell41" Dpi="254" Weight="0.15503418850124098" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="206" EventName="BeforePrint" PropertyName="Text" Expression="[Parts].[OEMCode]" />
+                      </ExpressionBindings>
+                    </Item2>
+                    <Item3 Ref="207" ControlType="XRTableCell" Name="tableCell40" Dpi="254" Weight="0.13780766566307537" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="208" EventName="BeforePrint" PropertyName="Text" Expression="[Parts].[OEMName]" />
+                      </ExpressionBindings>
+                    </Item3>
+                    <Item4 Ref="209" ControlType="XRTableCell" Name="tableCell43" Dpi="254" Weight="0.1877088415923962" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="210" EventName="BeforePrint" PropertyName="Text" Expression="[Parts].[SupplierCode]" />
+                      </ExpressionBindings>
+                    </Item4>
+                    <Item5 Ref="211" ControlType="XRTableCell" Name="tableCell42" Dpi="254" Weight="0.17048227468552571" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="212" EventName="BeforePrint" PropertyName="Text" Expression="[Parts].[SupplierName]" />
+                      </ExpressionBindings>
+                    </Item5>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item1>
+          </Controls>
+        </Item2>
+      </Bands>
+      <ReportPrintOptions Ref="213" PrintOnEmptyDataSource="false" />
+    </Item7>
+    <Item8 Ref="214" ControlType="DetailReportBand" Name="TimesheetTypes" Dpi="254" Level="3" DataMember="TimesheetTypes" DataSource="#Ref-0" PageBreak="AfterBand" Visible="false">
+      <Bands>
+        <Item1 Ref="215" ControlType="GroupHeaderBand" Name="GroupHeader4" Dpi="254" GroupUnion="WithFirstDetail" HeightF="275.299">
+          <Controls>
+            <Item1 Ref="216" ControlType="XRLabel" Name="label68" Dpi="254" Multiline="true" Text="This section is dedicated to explain end users different types of spent times for performing the activity.&#xD;&#xA;" SizeF="2770,120.5088" LocationFloat="0,58.41999" Font="Arial, 6.75pt" Padding="5,5,0,0,254">
+              <StylePriority Ref="217" UseFont="false" />
+            </Item1>
+            <Item2 Ref="218" ControlType="XRLabel" Name="label62" Dpi="254" Multiline="true" Text="Project Timesheet Types" Bookmark="Project Timesheet Types" SizeF="2770,58.42" LocationFloat="0,0" StyleName="GroupData2" Font="Arial, 12.75pt, style=Bold" ForeColor="White" BackColor="255,84,141,212" Padding="5,5,0,0,254" BorderColor="Black">
+              <StylePriority Ref="219" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" />
+            </Item2>
+            <Item3 Ref="220" ControlType="XRTable" Name="table8" Dpi="254" SizeF="2770,71.12" LocationFloat="0,204.179">
+              <Rows>
+                <Item1 Ref="221" ControlType="XRTableRow" Name="tableRow9" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="222" ControlType="XRTableCell" Name="tableCell46" Dpi="254" Weight="0.25526753229354693" Text="Unique Name" StyleName="DetailCaption2" />
+                    <Item2 Ref="223" ControlType="XRTableCell" Name="tableCell47" Dpi="254" Weight="0.30935206223911327" Text="Descriptive Name" StyleName="DetailCaption2" />
+                    <Item3 Ref="224" ControlType="XRTableCell" Name="tableCell45" Dpi="254" Weight="0.43538038343298735" Text="Description" StyleName="DetailCaption2" Borders="None">
+                      <StylePriority Ref="225" UseBorders="false" />
+                    </Item3>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item3>
+          </Controls>
+        </Item1>
+        <Item2 Ref="226" ControlType="DetailBand" Name="Detail4" Dpi="254" HeightF="63.42">
+          <Controls>
+            <Item1 Ref="227" ControlType="XRTable" Name="table9" Dpi="254" SizeF="2770,63.42" LocationFloat="0,0" OddStyleName="DetailData3_Odd">
+              <Rows>
+                <Item1 Ref="228" ControlType="XRTableRow" Name="tableRow10" Dpi="254" Weight="11.683999633789062">
+                  <Cells>
+                    <Item1 Ref="229" ControlType="XRTableCell" Name="tableCell49" Dpi="254" Weight="0.25526753229354693" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="230" EventName="BeforePrint" PropertyName="Text" Expression="[TimesheetTypes].[Code]" />
+                      </ExpressionBindings>
+                    </Item1>
+                    <Item2 Ref="231" ControlType="XRTableCell" Name="tableCell50" Dpi="254" Weight="0.30935208427346572" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="232" EventName="BeforePrint" PropertyName="Text" Expression="[TimesheetTypes].[Name]" />
+                      </ExpressionBindings>
+                    </Item2>
+                    <Item3 Ref="233" ControlType="XRTableCell" Name="tableCell48" Dpi="254" Weight="0.43538038343298735" StyleName="DetailData2" Borders="None">
+                      <ExpressionBindings>
+                        <Item1 Ref="234" EventName="BeforePrint" PropertyName="Text" Expression="[TimesheetTypes].[Description]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="235" UseBorders="false" />
+                    </Item3>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item1>
+          </Controls>
+        </Item2>
+      </Bands>
+      <ReportPrintOptions Ref="236" PrintOnEmptyDataSource="false" />
+    </Item8>
+    <Item9 Ref="237" ControlType="DetailReportBand" Name="DailyResults" Dpi="254" Level="4" DataMember="PTFs" DataSource="#Ref-0" PageBreak="AfterBand">
+      <Bands>
+        <Item1 Ref="238" ControlType="GroupHeaderBand" Name="GroupHeader5" Dpi="254" GroupUnion="WithFirstDetail" Level="1" HeightF="64.16146">
+          <GroupFields>
+            <Item1 Ref="239" FieldName="Date" SortOrder="Descending" />
+          </GroupFields>
+          <Controls>
+            <Item1 Ref="240" ControlType="XRLabel" Name="label12" Dpi="254" TextFormatString="{0:#.00}" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="194.0382,60" LocationFloat="1103.335,0" StyleName="TotalData2">
+              <Summary Ref="241" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="242" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalTWH])" />
+              </ExpressionBindings>
+              <StylePriority Ref="243" UseTextAlignment="false" />
+            </Item1>
+            <Item2 Ref="244" ControlType="XRLabel" Name="label10" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="199.9999,60" LocationFloat="707.091,0" StyleName="TotalData2" ForeColor="255,146,208,80">
+              <Summary Ref="245" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="246" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalROK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="247" UseForeColor="false" UseTextAlignment="false" />
+            </Item2>
+            <Item3 Ref="248" ControlType="XRLabel" Name="label8" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="196.244,63.5" LocationFloat="907.0911,0" StyleName="TotalData2" ForeColor="255,255,192,0">
+              <Summary Ref="249" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="250" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalRNOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="251" UseForeColor="false" UseTextAlignment="false" />
+            </Item3>
+            <Item4 Ref="252" ControlType="XRLabel" Name="label6" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="199.9999,63.5" LocationFloat="303.3351,0" StyleName="TotalData2" ForeColor="255,0,176,80">
+              <Summary Ref="253" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="254" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="255" UseForeColor="false" UseTextAlignment="false" />
+            </Item4>
+            <Item5 Ref="256" ControlType="XRLabel" Name="label4" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="203.756,63.5" LocationFloat="503.335,0" StyleName="TotalData2" ForeColor="255,240,0,0">
+              <Summary Ref="257" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="258" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalNOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="259" UseForeColor="false" UseTextAlignment="false" />
+            </Item5>
+            <Item6 Ref="260" ControlType="XRTable" Name="table10" Dpi="254" SizeF="254,63.49999" LocationFloat="0,0">
+              <Rows>
+                <Item1 Ref="261" ControlType="XRTableRow" Name="tableRow11" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="262" ControlType="XRTableCell" Name="tableCell52" Dpi="254" Weight="0.041079870285199944" TextFormatString="{0:MM/dd/yyyy}" StyleName="GroupData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="263" EventName="BeforePrint" PropertyName="Text" Expression="[Date]" />
+                      </ExpressionBindings>
+                    </Item1>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item6>
+          </Controls>
+        </Item1>
+        <Item2 Ref="264" ControlType="GroupHeaderBand" Name="GroupHeader6" Dpi="254" GroupUnion="WithFirstDetail" Level="2" HeightF="958.4626">
+          <Controls>
+            <Item1 Ref="265" ControlType="XRLabel" Name="label36" Dpi="254" Multiline="true" Text="GRAND TOTALS" SizeF="254,80.13977" LocationFloat="0,803.7687" StyleName="GroupData2" Padding="5,5,0,0,254" />
+            <Item2 Ref="266" ControlType="XRLabel" Name="label23" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="194.0382,80.13959" LocationFloat="1103.335,803.7687" StyleName="GrandTotalData2" BackColor="255,112,48,160">
+              <Summary Ref="267" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="268" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalTWH])" />
+              </ExpressionBindings>
+              <StylePriority Ref="269" UseBackColor="false" UseTextAlignment="false" />
+            </Item2>
+            <Item3 Ref="270" ControlType="XRLabel" Name="label21" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="200.0001,80.13965" LocationFloat="703.335,803.7687" StyleName="GrandTotalData2" BackColor="255,146,208,80">
+              <Summary Ref="271" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="272" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalROK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="273" UseBackColor="false" UseTextAlignment="false" />
+            </Item3>
+            <Item4 Ref="274" ControlType="XRLabel" Name="label19" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="199.9999,80.13965" LocationFloat="903.335,803.7687" StyleName="GrandTotalData2" BackColor="255,255,192,0">
+              <Summary Ref="275" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="276" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalRNOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="277" UseBackColor="false" UseTextAlignment="false" />
+            </Item4>
+            <Item5 Ref="278" ControlType="XRLabel" Name="label17" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="200,80.13971" LocationFloat="303.3351,803.7687" StyleName="GrandTotalData2" BackColor="255,0,176,80">
+              <Summary Ref="279" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="280" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="281" UseBackColor="false" UseTextAlignment="false" />
+            </Item5>
+            <Item6 Ref="282" ControlType="XRLabel" Name="label15" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="200,80.13977" LocationFloat="503.335,803.7687" StyleName="GrandTotalData2" BackColor="255,240,0,0">
+              <Summary Ref="283" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="284" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalNOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="285" UseBackColor="false" UseTextAlignment="false" />
+            </Item6>
+            <Item7 Ref="286" ControlType="XRLine" Name="line4" Dpi="254" SizeF="2769,58.41998" LocationFloat="1.000047,745.3487" />
+            <Item8 Ref="287" ControlType="XRChart" Name="chart2" Dpi="254" SizeF="2770,508" LocationFloat="0,237.3487" BorderColor="Black" Borders="None">
+              <Chart Ref="288">
+                <DataContainer Ref="289" ValidateDataMembers="true">
+                  <SeriesSerializable>
+                    <Item1 Ref="290" Name="TWH (hours)" SeriesID="0" ArgumentDataMember="PTFs.Date" ValueDataMembersSerializable="PTFs.TotalTWH">
+                      <View Ref="291" AggregateFunction="Sum" Color="255,112,48,160" TypeNameSerializable="LineSeriesView" />
+                    </Item1>
+                    <Item2 Ref="292" Name="OK (count)" SeriesID="1" ArgumentDataMember="PTFs.Date" ValueDataMembersSerializable="PTFs.TotalOK">
+                      <View Ref="293" AggregateFunction="Sum" Color="255,0,176,80" TypeNameSerializable="LineSeriesView" />
+                    </Item2>
+                    <Item3 Ref="294" Name="NOK (count)" SeriesID="2" ArgumentDataMember="PTFs.Date" ValueDataMembersSerializable="PTFs.TotalNOK">
+                      <View Ref="295" AggregateFunction="Sum" Color="255,240,0,0" TypeNameSerializable="LineSeriesView" />
+                    </Item3>
+                    <Item4 Ref="296" Name="ROK (count)" SeriesID="3" ArgumentDataMember="PTFs.Date" ValueDataMembersSerializable="PTFs.TotalROK">
+                      <View Ref="297" Color="255,146,208,80" TypeNameSerializable="LineSeriesView" />
+                    </Item4>
+                    <Item5 Ref="298" Name="RNOK (count)" SeriesID="4" ArgumentDataMember="PTFs.Date" ValueDataMembersSerializable="PTFs.TotalRNOK">
+                      <View Ref="299" Color="255,255,192,0" TypeNameSerializable="LineSeriesView" />
+                    </Item5>
+                  </SeriesSerializable>
+                </DataContainer>
+                <Diagram Ref="300" TypeNameSerializable="XYDiagram">
+                  <AxisX Ref="301" VisibleInPanesSerializable="-1" />
+                  <AxisY Ref="302" VisibleInPanesSerializable="-1" />
+                  <DefaultPane Ref="303" EnableAxisXScrolling="False" EnableAxisYScrolling="False" EnableAxisXZooming="False" EnableAxisYZooming="False">
+                    <StackedBarTotalLabel Ref="304">
+                      <ConnectorLineStyle Ref="305" />
+                    </StackedBarTotalLabel>
+                  </DefaultPane>
+                </Diagram>
+                <Legend Ref="306" />
+                <OptionsPrint Ref="307" ImageFormat="Metafile" />
+              </Chart>
+            </Item8>
+            <Item9 Ref="308" ControlType="XRLine" Name="line3" Dpi="254" SizeF="2769,58.41998" LocationFloat="1.000047,178.9288" />
+            <Item10 Ref="309" ControlType="XRLabel" Name="label69" Dpi="254" Multiline="true" Text="This section is dedicated to provide easy to reach information to end users about the activity quantities sorted/reworked/reflashed and duration of the spent time per day.&#xD;&#xA;" SizeF="2770,120.5088" LocationFloat="0,58.41999" Font="Arial, 6.75pt" Padding="5,5,0,0,254">
+              <StylePriority Ref="310" UseFont="false" />
+            </Item10>
+            <Item11 Ref="311" ControlType="XRLabel" Name="label63" Dpi="254" Multiline="true" Text="Project Daily Summary" Bookmark="Project Daily Summary" SizeF="2770,58.42" LocationFloat="0,0" StyleName="GroupData2" Font="Arial, 12.75pt, style=Bold" ForeColor="White" BackColor="255,84,141,212" Padding="5,5,0,0,254" BorderColor="Black">
+              <StylePriority Ref="312" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" />
+            </Item11>
+            <Item12 Ref="313" ControlType="XRTable" Name="table11" Dpi="254" SizeF="994.0382,71.11998" LocationFloat="303.3351,887.3427">
+              <Rows>
+                <Item1 Ref="314" ControlType="XRTableRow" Name="tableRow12" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="315" ControlType="XRTableCell" Name="tableCell58" Dpi="254" Weight="0.066936238451109464" Text="Total OK" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,0,176,80" BorderColor="Transparent">
+                      <StylePriority Ref="316" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="317" ControlType="XRTableCell" Name="tableCell57" Dpi="254" Weight="0.066936244503622039" Text="Total NOK" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,240,0,0" BorderColor="Transparent">
+                      <StylePriority Ref="318" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="319" ControlType="XRTableCell" Name="tableCell60" Dpi="254" Weight="0.066936244503622025" Text="Total ROK" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,146,208,80" BorderColor="Transparent">
+                      <StylePriority Ref="320" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="321" ControlType="XRTableCell" Name="tableCell59" Dpi="254" Weight="0.066936240969073441" Text="Total RNOK" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,255,192,0" BorderColor="Transparent">
+                      <StylePriority Ref="322" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item4>
+                    <Item5 Ref="323" ControlType="XRTableCell" Name="tableCell61" Dpi="254" Weight="0.064940950635857753" Text="Total TWH" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,112,48,160" BorderColor="Transparent">
+                      <StylePriority Ref="324" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item5>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item12>
+          </Controls>
+        </Item2>
+        <Item3 Ref="325" ControlType="DetailBand" Name="Detail5" Dpi="254" HeightF="63.42" Visible="false">
+          <Controls>
+            <Item1 Ref="326" ControlType="XRTable" Name="table12" Dpi="254" SizeF="1351.115,63.42" LocationFloat="205.537,0" OddStyleName="DetailData3_Odd">
+              <Rows>
+                <Item1 Ref="327" ControlType="XRTableRow" Name="tableRow13" Dpi="254" Weight="11.683999633789062">
+                  <Cells>
+                    <Item1 Ref="328" ControlType="XRTableCell" Name="tableCell67" Dpi="254" Weight="0.099667424501494808" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="329" EventName="BeforePrint" PropertyName="Text" Expression="[TotalOK]" />
+                      </ExpressionBindings>
+                    </Item1>
+                    <Item2 Ref="330" ControlType="XRTableCell" Name="tableCell66" Dpi="254" Weight="0.11304821468862816" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="331" EventName="BeforePrint" PropertyName="Text" Expression="[TotalNOK]" />
+                      </ExpressionBindings>
+                    </Item2>
+                    <Item3 Ref="332" ControlType="XRTableCell" Name="tableCell69" Dpi="254" Weight="0.11304821468862816" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="333" EventName="BeforePrint" PropertyName="Text" Expression="[TotalROK]" />
+                      </ExpressionBindings>
+                    </Item3>
+                    <Item4 Ref="334" ControlType="XRTableCell" Name="tableCell68" Dpi="254" Weight="0.1264290048757615" StyleName="DetailData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="335" EventName="BeforePrint" PropertyName="Text" Expression="[TotalRNOK]" />
+                      </ExpressionBindings>
+                    </Item4>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item1>
+          </Controls>
+        </Item3>
+        <Item4 Ref="336" ControlType="GroupFooterBand" Name="GroupFooter1" Dpi="254" GroupUnion="WithLastDetail" HeightF="15.24" Visible="false">
+          <Controls>
+            <Item1 Ref="337" ControlType="XRLabel" Name="label2" Dpi="254" SizeF="2770,5.2832" LocationFloat="0,0" StyleName="GroupFooterBackground3" Borders="None">
+              <StylePriority Ref="338" UseBorders="false" />
+            </Item1>
+          </Controls>
+        </Item4>
+        <Item5 Ref="339" ControlType="GroupFooterBand" Name="GroupFooter2" Dpi="254" Level="1" HeightF="142.6689" Visible="false">
+          <Controls>
+            <Item1 Ref="340" ControlType="XRPanel" Name="panel1" Dpi="254" SizeF="2770,142.6689" LocationFloat="0,0" StyleName="TotalBackground2">
+              <Controls>
+                <Item1 Ref="341" ControlType="XRLabel" Name="label3" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="1201.475,8.636001" StyleName="TotalCaption2" />
+                <Item2 Ref="342" ControlType="XRLabel" Name="label5" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="1514.619,8.636001" StyleName="TotalCaption2" />
+                <Item3 Ref="343" ControlType="XRLabel" Name="label7" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="1790.698,8.636001" StyleName="TotalCaption2" />
+                <Item4 Ref="344" ControlType="XRLabel" Name="label9" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="2140.906,8.636001" StyleName="TotalCaption2" />
+                <Item5 Ref="345" ControlType="XRLabel" Name="label11" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="2454.05,8.636001" StyleName="TotalCaption2" />
+                <Item6 Ref="346" ControlType="XRLabel" Name="label13" Dpi="254" Text="Date [Date]" TextAlignment="MiddleRight" SizeF="2739.52,37.80647" LocationFloat="15.24,75.65247" StyleName="TotalCaption2">
+                  <StylePriority Ref="347" UseTextAlignment="false" />
+                </Item6>
+              </Controls>
+            </Item1>
+          </Controls>
+        </Item5>
+        <Item6 Ref="348" ControlType="ReportFooterBand" Name="ReportFooter" Dpi="254" HeightF="249.5856" Visible="false">
+          <Controls>
+            <Item1 Ref="349" ControlType="XRPanel" Name="panel2" Dpi="254" SizeF="2770,125.4365" LocationFloat="0,0" StyleName="GrandTotalBackground2">
+              <Controls>
+                <Item1 Ref="350" ControlType="XRLabel" Name="label14" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="1201.475,29.21" StyleName="GrandTotalCaption2" />
+                <Item2 Ref="351" ControlType="XRLabel" Name="label16" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="1514.619,29.21" StyleName="GrandTotalCaption2" />
+                <Item3 Ref="352" ControlType="XRLabel" Name="label18" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="1790.698,29.21" StyleName="GrandTotalCaption2" />
+                <Item4 Ref="353" ControlType="XRLabel" Name="label20" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="2140.906,29.21" StyleName="GrandTotalCaption2" />
+                <Item5 Ref="354" ControlType="XRLabel" Name="label22" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="2454.05,29.21" StyleName="GrandTotalCaption2" />
+              </Controls>
+            </Item1>
+          </Controls>
+        </Item6>
+      </Bands>
+      <ReportPrintOptions Ref="355" PrintOnEmptyDataSource="false" />
+    </Item9>
+    <Item10 Ref="356" ControlType="DetailReportBand" Name="Traceabilities" Dpi="254" Level="5" DataMember="Traceabilities" DataSource="#Ref-0" PageBreak="AfterBand">
+      <Bands>
+        <Item1 Ref="357" ControlType="GroupHeaderBand" Name="GroupHeader7" Dpi="254" GroupUnion="WithFirstDetail" Level="1" HeightF="92.0819">
+          <GroupFields>
+            <Item1 Ref="358" FieldName="Date" SortOrder="Descending" />
+          </GroupFields>
+          <Controls>
+            <Item1 Ref="359" ControlType="XRLabel" Name="label32" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="124.5522,68.58006" LocationFloat="503.3351,0" StyleName="TotalData2" Font="Arial, 8.25pt, style=Bold" ForeColor="255,146,208,80">
+              <Summary Ref="360" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="361" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([ROK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="362" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+            </Item1>
+            <Item2 Ref="363" ControlType="XRLabel" Name="label30" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="128.4,68.58006" LocationFloat="627.8873,0" StyleName="TotalData2" ForeColor="255,255,192,0">
+              <Summary Ref="364" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="365" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([RNOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="366" UseForeColor="false" UseTextAlignment="false" />
+            </Item2>
+            <Item3 Ref="367" ControlType="XRLabel" Name="label28" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="115.5023,68.5798" LocationFloat="269.6812,0" StyleName="TotalData2" ForeColor="255,0,176,80">
+              <Summary Ref="368" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="369" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([OK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="370" UseForeColor="false" UseTextAlignment="false" />
+            </Item3>
+            <Item4 Ref="371" ControlType="XRLabel" Name="label26" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="118.1515,68.5798" LocationFloat="385.1835,0" StyleName="TotalData2" Font="Arial, 8.25pt, style=Bold" ForeColor="255,240,0,0">
+              <Summary Ref="372" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="373" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([NOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="374" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+            </Item4>
+            <Item5 Ref="375" ControlType="XRTable" Name="table13" Dpi="254" SizeF="268.681,63.5" LocationFloat="1.000036,5.079793" Font="Arial, 5pt">
+              <Rows>
+                <Item1 Ref="376" ControlType="XRTableRow" Name="tableRow14" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="377" ControlType="XRTableCell" Name="tableCell72" Dpi="254" Weight="0.96417822441899814" TextFormatString="{0:MM/dd/yyyy}" StyleName="GroupData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="378" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[Date]" />
+                      </ExpressionBindings>
+                    </Item1>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="379" UseFont="false" />
+            </Item5>
+          </Controls>
+        </Item1>
+        <Item2 Ref="380" ControlType="GroupHeaderBand" Name="GroupHeader8" Dpi="254" GroupUnion="WithFirstDetail" Level="2" HeightF="1325.511">
+          <Controls>
+            <Item1 Ref="381" ControlType="XRLabel" Name="label38" Dpi="254" Multiline="true" Text="GRAND TOTALS" SizeF="268.4418,74.36743" LocationFloat="1.239265,1174.251" StyleName="GroupFooterBackground3" Padding="5,5,0,0,254" BorderColor="Transparent">
+              <StylePriority Ref="382" UseBorderColor="false" />
+            </Item1>
+            <Item2 Ref="383" ControlType="XRLabel" Name="label34" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="404.8791,74.36658" LocationFloat="756.2873,1174.252" StyleName="GroupFooterBackground3" ForeColor="White" BackColor="255,216,216,216" BorderColor="Transparent">
+              <Summary Ref="384" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="385" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TOTAL])" />
+              </ExpressionBindings>
+              <StylePriority Ref="386" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+            </Item2>
+            <Item3 Ref="387" ControlType="XRLabel" Name="label43" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="128.4012,74.36658" LocationFloat="499.4862,1174.252" StyleName="GrandTotalData2" BackColor="255,146,208,80">
+              <Summary Ref="388" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="389" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([ROK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="390" UseBackColor="false" UseTextAlignment="false" />
+            </Item3>
+            <Item4 Ref="391" ControlType="XRLabel" Name="label41" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="128.3999,74.36646" LocationFloat="627.8874,1174.252" StyleName="GrandTotalData2" BackColor="255,255,192,0" BorderColor="Transparent">
+              <Summary Ref="392" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="393" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([RNOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="394" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+            </Item4>
+            <Item5 Ref="395" ControlType="XRLabel" Name="label39" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="101.4042,74.36731" LocationFloat="269.6812,1174.251" StyleName="GrandTotalData2" BackColor="255,0,176,80">
+              <Summary Ref="396" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="397" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([OK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="398" UseBackColor="false" UseTextAlignment="false" />
+            </Item5>
+            <Item6 Ref="399" ControlType="XRLabel" Name="label37" Dpi="254" CanGrow="false" TextAlignment="MiddleCenter" WordWrap="false" SizeF="128.4008,74.36707" LocationFloat="371.0854,1174.251" StyleName="GrandTotalData2" BackColor="255,240,0,0" BorderColor="Black">
+              <Summary Ref="400" Running="Report" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="401" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([NOK])" />
+              </ExpressionBindings>
+              <StylePriority Ref="402" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+            </Item6>
+            <Item7 Ref="403" ControlType="XRLine" Name="line6" Dpi="254" SizeF="2768.999,58.41998" LocationFloat="1.000047,1115.831" />
+            <Item8 Ref="404" ControlType="XRLine" Name="line5" Dpi="254" SizeF="2770,58.41998" LocationFloat="0,178.9291" />
+            <Item9 Ref="405" ControlType="XRChart" Name="chart3" Dpi="254" SizeF="2770,878.4822" LocationFloat="0,237.3493" BorderColor="Black" Borders="None">
+              <Chart Ref="406">
+                <DataContainer Ref="407" ValidateDataMembers="true">
+                  <SeriesSerializable>
+                    <Item1 Ref="408" Name="OK" SeriesID="0" ArgumentDataMember="PTFTraceabilities.PTF.Date" ValueDataMembersSerializable="PTFTraceabilities.OK" ArgumentScaleType="DateTime">
+                      <View Ref="409" AggregateFunction="Sum" Color="255,0,176,80" TypeNameSerializable="PointSeriesView">
+                        <PointMarkerOptions Ref="410" Size="10" />
+                      </View>
+                    </Item1>
+                    <Item2 Ref="411" Name="NOK" SeriesID="1" ArgumentDataMember="PTFTraceabilities.PTF.Date" ValueDataMembersSerializable="PTFTraceabilities.NOK" ArgumentScaleType="DateTime">
+                      <View Ref="412" AggregateFunction="Sum" Color="255,240,0,0" TypeNameSerializable="PointSeriesView">
+                        <PointMarkerOptions Ref="413" Size="10" />
+                      </View>
+                    </Item2>
+                    <Item3 Ref="414" Name="ROK" SeriesID="2" ArgumentDataMember="PTFTraceabilities.PTF.Date" ValueDataMembersSerializable="PTFTraceabilities.ROK" ArgumentScaleType="DateTime">
+                      <View Ref="415" AggregateFunction="Sum" Color="255,146,208,80" TypeNameSerializable="PointSeriesView">
+                        <PointMarkerOptions Ref="416" Size="10" />
+                      </View>
+                    </Item3>
+                    <Item4 Ref="417" Name="RNOK" SeriesID="3" ArgumentDataMember="PTFTraceabilities.PTF.Date" ValueDataMembersSerializable="PTFTraceabilities.RNOK" ArgumentScaleType="DateTime">
+                      <View Ref="418" AggregateFunction="Sum" Color="255,255,192,0" TypeNameSerializable="PointSeriesView">
+                        <PointMarkerOptions Ref="419" Size="10" />
+                      </View>
+                    </Item4>
+                  </SeriesSerializable>
+                  <SeriesTemplate Ref="420">
+                    <View Ref="421" TypeNameSerializable="PointSeriesView" />
+                  </SeriesTemplate>
+                </DataContainer>
+                <Diagram Ref="422" TypeNameSerializable="XYDiagram">
+                  <AxisX Ref="423" VisibleInPanesSerializable="-1" />
+                  <AxisY Ref="424" VisibleInPanesSerializable="-1" />
+                  <DefaultPane Ref="425" EnableAxisXScrolling="False" EnableAxisYScrolling="False" EnableAxisXZooming="False" EnableAxisYZooming="False">
+                    <StackedBarTotalLabel Ref="426">
+                      <ConnectorLineStyle Ref="427" />
+                    </StackedBarTotalLabel>
+                  </DefaultPane>
+                </Diagram>
+                <Legend Ref="428" />
+                <OptionsPrint Ref="429" ImageFormat="Metafile" />
+              </Chart>
+            </Item9>
+            <Item10 Ref="430" ControlType="XRLabel" Name="label71" Dpi="254" Multiline="true" Text="This section is dedicated to provide traceability information of parts which have been sorted/reworked/reflashed and results of the activities." SizeF="2770,120.5088" LocationFloat="0,58.41999" Font="Arial, 6.75pt" Padding="5,5,0,0,254">
+              <StylePriority Ref="431" UseFont="false" />
+            </Item10>
+            <Item11 Ref="432" ControlType="XRLabel" Name="label70" Dpi="254" Multiline="true" Text="Project Daily Traceability Report" Bookmark="Project Daily Traceability Report" SizeF="2770,58.42" LocationFloat="0,0" StyleName="GroupData2" Font="Arial, 12.75pt, style=Bold" ForeColor="White" BackColor="255,84,141,212" Padding="5,5,0,0,254" BorderColor="Black">
+              <StylePriority Ref="433" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" />
+            </Item11>
+            <Item12 Ref="434" ControlType="XRTable" Name="table14" Dpi="254" SizeF="2769.999,71.11987" LocationFloat="3.051758E-05,1254.391">
+              <Rows>
+                <Item1 Ref="435" ControlType="XRTableRow" Name="tableRow15" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="436" ControlType="XRTableCell" Name="tableCell82" Dpi="254" Weight="0.10268032951570394" Text="Part Number" StyleName="DetailCaption2" BorderColor="Transparent">
+                      <StylePriority Ref="437" UseBorderColor="false" />
+                    </Item1>
+                    <Item2 Ref="438" ControlType="XRTableCell" Name="tableCell79" Dpi="254" Weight="0.038609453581202116" Text="OK" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,0,176,80" BorderColor="Transparent">
+                      <StylePriority Ref="439" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="440" ControlType="XRTableCell" Name="tableCell78" Dpi="254" Weight="0.048888244829353882" Text="NOK" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,240,0,0" BorderColor="Transparent">
+                      <StylePriority Ref="441" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="442" ControlType="XRTableCell" Name="tableCell86" Dpi="254" Weight="0.048888269877603779" Text="ROK" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,146,208,80" BorderColor="Transparent">
+                      <StylePriority Ref="443" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item4>
+                    <Item5 Ref="444" ControlType="XRTableCell" Name="tableCell85" Dpi="254" Weight="0.048888108009283934" Text="RNOK" TextAlignment="MiddleCenter" StyleName="DetailCaption2" BackColor="255,255,192,0" BorderColor="Transparent">
+                      <StylePriority Ref="445" UseBackColor="false" UseBorderColor="false" UseTextAlignment="false" />
+                    </Item5>
+                    <Item6 Ref="446" ControlType="XRTableCell" Name="tableCell81" Dpi="254" Weight="0.18793222956669917" Text="SERIAL" StyleName="DetailCaption2" />
+                    <Item7 Ref="447" ControlType="XRTableCell" Name="tableCell34" Dpi="254" Weight="0.18793222956669917" Multiline="true" Text="LOT NO" StyleName="DetailCaption2" />
+                    <Item8 Ref="448" ControlType="XRTableCell" Name="tableCell32" Dpi="254" Weight="0.18024194181581685" Multiline="true" Text="PRODUCTION DATE" StyleName="DetailCaption2" />
+                    <Item9 Ref="449" ControlType="XRTableCell" Name="tableCell74" Dpi="254" Weight="0.21060898052696478" Text="Description" StyleName="DetailCaption2" />
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item12>
+          </Controls>
+        </Item2>
+        <Item3 Ref="450" ControlType="DetailBand" Name="Detail6" Dpi="254" HeightF="43.88304">
+          <Controls>
+            <Item1 Ref="451" ControlType="XRTable" Name="table15" Dpi="254" TextAlignment="TopCenter" SizeF="2770.001,38.42002" LocationFloat="0,0" OddStyleName="DetailData3_Odd" Font="Arial, 5pt">
+              <Rows>
+                <Item1 Ref="452" ControlType="XRTableRow" Name="tableRow16" Dpi="254" Weight="11.683999633789062">
+                  <Cells>
+                    <Item1 Ref="453" ControlType="XRTableCell" Name="tableCell98" Dpi="254" Weight="0.0951202938183396" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="454" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[Part].[Name]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="455" UseFont="false" />
+                    </Item1>
+                    <Item2 Ref="456" ControlType="XRTableCell" Name="tableCell95" Dpi="254" Weight="0.0407393308915984" TextAlignment="MiddleCenter" StyleName="DetailData2" Font="Arial, 6pt" ForeColor="255,0,176,80">
+                      <ExpressionBindings>
+                        <Item1 Ref="457" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[OK]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="458" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="459" ControlType="XRTableCell" Name="tableCell94" Dpi="254" Weight="0.041673696444352995" TextAlignment="MiddleCenter" StyleName="DetailData2" Font="Arial, 6pt" ForeColor="255,240,0,0">
+                      <ExpressionBindings>
+                        <Item1 Ref="460" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[NOK]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="461" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="462" ControlType="XRTableCell" Name="tableCell102" Dpi="254" Weight="0.043931372186330614" TextAlignment="MiddleCenter" StyleName="DetailData2" Font="Arial, 6pt" ForeColor="255,146,208,80">
+                      <ExpressionBindings>
+                        <Item1 Ref="463" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[ROK]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="464" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+                    </Item4>
+                    <Item5 Ref="465" ControlType="XRTableCell" Name="tableCell101" Dpi="254" Weight="0.045288447010877" TextAlignment="MiddleCenter" StyleName="DetailData2" Font="Arial, 6pt" ForeColor="255,255,192,0">
+                      <ExpressionBindings>
+                        <Item1 Ref="466" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[RNOK]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="467" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+                    </Item5>
+                    <Item6 Ref="468" ControlType="XRTableCell" Name="tableCell97" Dpi="254" Weight="0.1740953718907039" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="469" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[SERIAL]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="470" UseFont="false" />
+                    </Item6>
+                    <Item7 Ref="471" ControlType="XRTableCell" Name="tableCell33" Dpi="254" Weight="0.17409545800252704" Multiline="true" Text="tableCell33" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="472" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[PALETTE]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="473" UseFont="false" />
+                    </Item7>
+                    <Item8 Ref="474" ControlType="XRTableCell" Name="tableCell31" Dpi="254" Weight="0.16697108242880354" Multiline="true" Text="tableCell31" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="475" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[ORDER]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="476" UseFont="false" />
+                    </Item8>
+                    <Item9 Ref="477" ControlType="XRTableCell" Name="tableCell90" Dpi="254" Weight="0.19510317288501411" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="478" EventName="BeforePrint" PropertyName="Text" Expression="[Traceabilities].[Description]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="479" UseFont="false" />
+                    </Item9>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="480" UseFont="false" UseTextAlignment="false" />
+            </Item1>
+          </Controls>
+        </Item3>
+        <Item4 Ref="481" ControlType="GroupFooterBand" Name="GroupFooter3" Dpi="254" GroupUnion="WithLastDetail" HeightF="15.24">
+          <Controls>
+            <Item1 Ref="482" ControlType="XRLabel" Name="label24" Dpi="254" SizeF="2770,5.2832" LocationFloat="0,0" StyleName="GroupFooterBackground3" Borders="None">
+              <StylePriority Ref="483" UseBorders="false" />
+            </Item1>
+          </Controls>
+        </Item4>
+        <Item5 Ref="484" ControlType="GroupFooterBand" Name="GroupFooter4" Dpi="254" Level="1" HeightF="142.6689" Visible="false">
+          <Controls>
+            <Item1 Ref="485" ControlType="XRPanel" Name="panel3" Dpi="254" SizeF="2770,142.6689" LocationFloat="0,0" StyleName="TotalBackground2">
+              <Controls>
+                <Item1 Ref="486" ControlType="XRLabel" Name="label25" Dpi="254" Text="SUM" SizeF="54,37.80647" LocationFloat="1026.683,8.636001" StyleName="TotalCaption2" />
+                <Item2 Ref="487" ControlType="XRLabel" Name="label27" Dpi="254" Text="SUM" SizeF="43,37.80647" LocationFloat="1136.081,8.636001" StyleName="TotalCaption2" />
+                <Item3 Ref="488" ControlType="XRLabel" Name="label29" Dpi="254" Text="SUM" SizeF="66,37.80647" LocationFloat="2258.056,8.636001" StyleName="TotalCaption2" />
+                <Item4 Ref="489" ControlType="XRLabel" Name="label31" Dpi="254" Text="SUM" SizeF="54,37.80647" LocationFloat="2390.455,8.636001" StyleName="TotalCaption2" />
+                <Item5 Ref="490" ControlType="XRLabel" Name="label33" Dpi="254" Text="SUM" SizeF="72,37.80647" LocationFloat="2625.237,8.636001" StyleName="TotalCaption2" />
+                <Item6 Ref="491" ControlType="XRLabel" Name="label35" Dpi="254" Text="Date [Date]" TextAlignment="MiddleRight" SizeF="2739.52,37.80647" LocationFloat="15.24,75.65247" StyleName="TotalCaption2">
+                  <StylePriority Ref="492" UseTextAlignment="false" />
+                </Item6>
+              </Controls>
+            </Item1>
+          </Controls>
+        </Item5>
+        <Item6 Ref="493" ControlType="ReportFooterBand" Name="ReportFooter1" Dpi="254" HeightF="125.4365" Visible="false">
+          <Controls>
+            <Item1 Ref="494" ControlType="XRPanel" Name="panel4" Dpi="254" SizeF="2770,125.4365" LocationFloat="0,0" StyleName="GrandTotalBackground2">
+              <Controls>
+                <Item1 Ref="495" ControlType="XRLabel" Name="label45" Dpi="254" CanGrow="false" TextAlignment="MiddleRight" WordWrap="false" SizeF="72.7627,37.80647" LocationFloat="2697.237,29.21" StyleName="GrandTotalData2">
+                  <Summary Ref="496" Running="Report" IgnoreNullValues="true" />
+                  <ExpressionBindings>
+                    <Item1 Ref="497" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TOTAL])" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="498" UseTextAlignment="false" />
+                </Item1>
+              </Controls>
+            </Item1>
+          </Controls>
+        </Item6>
+      </Bands>
+      <ReportPrintOptions Ref="499" PrintOnEmptyDataSource="false" />
+    </Item10>
+    <Item11 Ref="500" ControlType="DetailReportBand" Name="Timesheets" Dpi="254" Level="6" DataMember="Timesheets" DataSource="#Ref-0" PageBreak="AfterBand" Visible="false">
+      <Bands>
+        <Item1 Ref="501" ControlType="GroupHeaderBand" Name="GroupHeader9" Dpi="254" GroupUnion="WithFirstDetail" Level="1" HeightF="61.58027">
+          <GroupFields>
+            <Item1 Ref="502" FieldName="Date" SortOrder="Descending" />
+          </GroupFields>
+          <Controls>
+            <Item1 Ref="503" ControlType="XRLabel" Name="label50" Dpi="254" TextFormatString="{0:#.00}" CanGrow="false" WordWrap="false" SizeF="199.9998,61.57996" LocationFloat="627.8873,0" StyleName="TotalData2">
+              <Summary Ref="504" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="505" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([DMinute])" />
+              </ExpressionBindings>
+            </Item1>
+            <Item2 Ref="506" ControlType="XRLabel" Name="label48" Dpi="254" TextFormatString="{0:#.00}" CanGrow="false" WordWrap="false" SizeF="199.9999,61.5797" LocationFloat="827.8871,0" StyleName="TotalData2">
+              <Summary Ref="507" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="508" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([DMinute])" />
+              </ExpressionBindings>
+            </Item2>
+            <Item3 Ref="509" ControlType="XRLabel" Name="label52" Dpi="254" TextFormatString="{0:#.00}" CanGrow="false" TextAlignment="MiddleRight" WordWrap="false" SizeF="206.8966,60" LocationFloat="420.9904,1.580265" StyleName="TotalData2">
+              <Summary Ref="510" Running="Group" IgnoreNullValues="true" />
+              <ExpressionBindings>
+                <Item1 Ref="511" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([DMinute])" />
+              </ExpressionBindings>
+              <StylePriority Ref="512" UseTextAlignment="false" />
+            </Item3>
+            <Item4 Ref="513" ControlType="XRTable" Name="table16" Dpi="254" SizeF="419.9904,60" LocationFloat="1.000036,1.579749">
+              <Rows>
+                <Item1 Ref="514" ControlType="XRTableRow" Name="tableRow17" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="515" ControlType="XRTableCell" Name="tableCell106" Dpi="254" Weight="0.96417822441899814" TextFormatString="{0:MM/dd/yyyy}" StyleName="GroupData2">
+                      <ExpressionBindings>
+                        <Item1 Ref="516" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[Date]" />
+                      </ExpressionBindings>
+                    </Item1>
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item4>
+          </Controls>
+        </Item1>
+        <Item2 Ref="517" ControlType="GroupHeaderBand" Name="GroupHeader10" Dpi="254" GroupUnion="WithFirstDetail" Level="2" HeightF="874.9854">
+          <Controls>
+            <Item1 Ref="518" ControlType="XRLine" Name="line7" Dpi="254" SizeF="2768.76,58.41992" LocationFloat="1.239265,745.3493" />
+            <Item2 Ref="519" ControlType="XRLine" Name="line2" Dpi="254" SizeF="2770,58.41998" LocationFloat="0,178.9291" />
+            <Item3 Ref="520" ControlType="XRLabel" Name="label73" Dpi="254" Multiline="true" Text="This section is dedicated to provide information about spent times by ORCA employees based on predefined timesheet types of the actvitiy." SizeF="2770,120.5088" LocationFloat="0,58.41999" Font="Arial, 6.75pt" Padding="5,5,0,0,254">
+              <StylePriority Ref="521" UseFont="false" />
+            </Item3>
+            <Item4 Ref="522" ControlType="XRLabel" Name="label72" Dpi="254" Multiline="true" Text="Project Daily Timesheet Report" Bookmark="Project Daily Timesheet Report" SizeF="2770,58.42" LocationFloat="0,0" StyleName="GroupData2" Font="Arial, 12.75pt, style=Bold" ForeColor="White" BackColor="255,84,141,212" Padding="5,5,0,0,254" BorderColor="Black">
+              <StylePriority Ref="523" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" />
+            </Item4>
+            <Item5 Ref="524" ControlType="XRTable" Name="table17" Dpi="254" TextAlignment="MiddleCenter" SizeF="2770,71.12" LocationFloat="0,803.7692">
+              <Rows>
+                <Item1 Ref="525" ControlType="XRTableRow" Name="tableRow18" Dpi="254" Weight="1">
+                  <Cells>
+                    <Item1 Ref="526" ControlType="XRTableCell" Name="tableCell108" Dpi="254" Weight="0.12477838735405135" Text="Employee" StyleName="DetailCaption2" />
+                    <Item2 Ref="527" ControlType="XRTableCell" Name="tableCell117" Dpi="254" Weight="0.061322637529801285" Text="TOTAL" TextAlignment="MiddleRight" StyleName="DetailCaption2">
+                      <StylePriority Ref="528" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="529" ControlType="XRTableCell" Name="tableCell110" Dpi="254" Weight="0.059278500934979453" Text="Normal WH" StyleName="DetailCaption2" />
+                    <Item4 Ref="530" ControlType="XRTableCell" Name="tableCell109" Dpi="254" Weight="0.059278499543991281" Text="Extra WH" StyleName="DetailCaption2" />
+                    <Item5 Ref="531" ControlType="XRTableCell" Name="tableCell111" Dpi="254" Weight="0.21071706405792343" Text="Project Location" StyleName="DetailCaption2" />
+                    <Item6 Ref="532" ControlType="XRTableCell" Name="tableCell112" Dpi="254" Weight="0.16416689429542783" Text="Project Timesheet Type" StyleName="DetailCaption2" />
+                    <Item7 Ref="533" ControlType="XRTableCell" Name="tableCell113" Dpi="254" Weight="0.0729166758956999" Text="START" StyleName="DetailCaption2" />
+                    <Item8 Ref="534" ControlType="XRTableCell" Name="tableCell115" Dpi="254" Weight="0.068548475219985472" Text="END" StyleName="DetailCaption2" />
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="535" UseTextAlignment="false" />
+            </Item5>
+          </Controls>
+        </Item2>
+        <Item3 Ref="536" ControlType="DetailBand" Name="Detail7" Dpi="254" HeightF="42.39147">
+          <Controls>
+            <Item1 Ref="537" ControlType="XRTable" Name="table18" Dpi="254" TextAlignment="TopCenter" SizeF="2770,38.42002" LocationFloat="0,0" OddStyleName="DetailData3_Odd">
+              <Rows>
+                <Item1 Ref="538" ControlType="XRTableRow" Name="tableRow19" Dpi="254" Weight="11.683999633789062">
+                  <Cells>
+                    <Item1 Ref="539" ControlType="XRTableCell" Name="tableCell119" Dpi="254" Weight="0.14209549101017371" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="540" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[Employee].[DisplayName]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="541" UseFont="false" />
+                    </Item1>
+                    <Item2 Ref="542" ControlType="XRTableCell" Name="tableCell128" Dpi="254" Weight="0.069833182988574521" TextFormatString="{0:#.00}" TextAlignment="MiddleRight" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="543" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[Duration]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="544" UseFont="false" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="545" ControlType="XRTableCell" Name="tableCell121" Dpi="254" Weight="0.0675053132200958" TextFormatString="{0:#.00}" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="546" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[Duration]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="547" UseFont="false" />
+                    </Item3>
+                    <Item4 Ref="548" ControlType="XRTableCell" Name="tableCell120" Dpi="254" Weight="0.067505290730178913" TextFormatString="{0:#.00}" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="549" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[Duration]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="550" UseFont="false" />
+                    </Item4>
+                    <Item5 Ref="551" ControlType="XRTableCell" Name="tableCell122" Dpi="254" Weight="0.23996094577774638" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="552" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[Location].[Name]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="553" UseFont="false" />
+                    </Item5>
+                    <Item6 Ref="554" ControlType="XRTableCell" Name="tableCell123" Dpi="254" Weight="0.18695049021944021" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="555" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[ProjectTimesheetType].[Name]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="556" UseFont="false" />
+                    </Item6>
+                    <Item7 Ref="557" ControlType="XRTableCell" Name="tableCell126" Dpi="254" Weight="0.046066869593643256" TextAlignment="MiddleRight" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="558" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[StartHourWrapper].[StartHour]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="559" UseFont="false" UseTextAlignment="false" />
+                    </Item7>
+                    <Item8 Ref="560" ControlType="XRTableCell" Name="tableCell127" Dpi="254" Weight="0.0369693904176409" TextAlignment="MiddleLeft" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="561" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[StartMinuteWrapper].[StartMinute]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="562" UseFont="false" UseTextAlignment="false" />
+                    </Item8>
+                    <Item9 Ref="563" ControlType="XRTableCell" Name="tableCell124" Dpi="254" Weight="0.043240987266250121" TextAlignment="MiddleRight" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="564" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[EndHourWrapper].[EndHour]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="565" UseFont="false" UseTextAlignment="false" />
+                    </Item9>
+                    <Item10 Ref="566" ControlType="XRTableCell" Name="tableCell125" Dpi="254" Weight="0.034820908011330386" TextAlignment="MiddleLeft" StyleName="DetailData2" Font="Arial, 6pt">
+                      <ExpressionBindings>
+                        <Item1 Ref="567" EventName="BeforePrint" PropertyName="Text" Expression="[Timesheets].[EndMinuteWrapper].[EndMinute]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="568" UseFont="false" UseTextAlignment="false" />
+                    </Item10>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="569" UseTextAlignment="false" />
+            </Item1>
+          </Controls>
+        </Item3>
+        <Item4 Ref="570" ControlType="GroupFooterBand" Name="GroupFooter5" Dpi="254" GroupUnion="WithLastDetail" HeightF="15.24">
+          <Controls>
+            <Item1 Ref="571" ControlType="XRLabel" Name="label46" Dpi="254" SizeF="2770,5.2832" LocationFloat="0,0" StyleName="GroupFooterBackground3" Borders="None">
+              <StylePriority Ref="572" UseBorders="false" />
+            </Item1>
+          </Controls>
+        </Item4>
+        <Item5 Ref="573" ControlType="GroupFooterBand" Name="GroupFooter6" Dpi="254" Level="1" HeightF="142.6689" Visible="false">
+          <Controls>
+            <Item1 Ref="574" ControlType="XRPanel" Name="panel5" Dpi="254" SizeF="2770,142.6689" LocationFloat="0,0" StyleName="TotalBackground2">
+              <Controls>
+                <Item1 Ref="575" ControlType="XRLabel" Name="label47" Dpi="254" Text="SUM" SizeF="75,37.80647" LocationFloat="337.7708,8.636001" StyleName="TotalCaption2" />
+                <Item2 Ref="576" ControlType="XRLabel" Name="label49" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="488.8406,8.636001" StyleName="TotalCaption2" />
+                <Item3 Ref="577" ControlType="XRLabel" Name="label51" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="2475.075,8.636001" StyleName="TotalCaption2" />
+                <Item4 Ref="578" ControlType="XRLabel" Name="label53" Dpi="254" Text="Date [Date]" TextAlignment="MiddleRight" SizeF="2739.52,37.80647" LocationFloat="15.24,75.65247" StyleName="TotalCaption2">
+                  <StylePriority Ref="579" UseTextAlignment="false" />
+                </Item4>
+              </Controls>
+            </Item1>
+          </Controls>
+        </Item5>
+        <Item6 Ref="580" ControlType="ReportFooterBand" Name="ReportFooter2" Dpi="254" HeightF="125.4365" Visible="false">
+          <Controls>
+            <Item1 Ref="581" ControlType="XRPanel" Name="panel6" Dpi="254" SizeF="2770,125.4365" LocationFloat="0,0" StyleName="GrandTotalBackground2">
+              <Controls>
+                <Item1 Ref="582" ControlType="XRLabel" Name="label54" Dpi="254" Text="SUM" SizeF="75,37.80647" LocationFloat="337.7708,29.21" StyleName="GrandTotalCaption2" />
+                <Item2 Ref="583" ControlType="XRLabel" Name="label55" Dpi="254" CanGrow="false" WordWrap="false" SizeF="294.3203,37.80647" LocationFloat="436.0541,14.39292" StyleName="GrandTotalData2">
+                  <Summary Ref="584" Running="Report" IgnoreNullValues="true" />
+                  <ExpressionBindings>
+                    <Item1 Ref="585" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([ExtraWH])" />
+                  </ExpressionBindings>
+                </Item2>
+                <Item3 Ref="586" ControlType="XRLabel" Name="label56" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="590.4407,62.63003" StyleName="GrandTotalCaption2" />
+                <Item4 Ref="587" ControlType="XRLabel" Name="label57" Dpi="254" CanGrow="false" WordWrap="false" SizeF="454.3721,37.80647" LocationFloat="783.2845,25.00002" StyleName="GrandTotalData2">
+                  <Summary Ref="588" Running="Report" IgnoreNullValues="true" />
+                  <ExpressionBindings>
+                    <Item1 Ref="589" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([NormalWH])" />
+                  </ExpressionBindings>
+                </Item4>
+                <Item5 Ref="590" ControlType="XRLabel" Name="label58" Dpi="254" Text="SUM" SizeF="84.67433,37.80647" LocationFloat="2475.075,29.21" StyleName="GrandTotalCaption2" />
+                <Item6 Ref="591" ControlType="XRLabel" Name="label59" Dpi="254" CanGrow="false" TextAlignment="MiddleRight" WordWrap="false" SizeF="210.2505,37.80647" LocationFloat="2559.75,29.21" StyleName="GrandTotalData2">
+                  <Summary Ref="592" Running="Report" IgnoreNullValues="true" />
+                  <ExpressionBindings>
+                    <Item1 Ref="593" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalWorkingHours])" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="594" UseTextAlignment="false" />
+                </Item6>
+              </Controls>
+            </Item1>
+          </Controls>
+        </Item6>
+      </Bands>
+      <ReportPrintOptions Ref="595" PrintOnEmptyDataSource="false" />
+    </Item11>
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="596" Name="Title" BorderStyle="Inset" Font="Arial, 14.25pt" ForeColor="255,64,70,80" BackColor="Transparent" BorderColor="Black" Sides="None" StringFormat="Near;Near;0;None;Character;GenericDefault" BorderWidthSerializable="1" />
+    <Item2 Ref="597" Name="DetailCaption1" BorderStyle="Inset" Padding="15,15,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="White" BackColor="255,23,104,196" BorderColor="White" Sides="Left" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item3 Ref="598" Name="DetailData1" BorderStyle="Inset" Padding="15,15,0,0,254" Font="Arial, 8.25pt" ForeColor="Black" BorderColor="Transparent" Sides="Left" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item4 Ref="599" Name="GroupCaption2" BorderStyle="Inset" Padding="15,5,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="255,228,228,228" BackColor="255,37,129,216" BorderColor="White" Sides="Bottom" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item5 Ref="600" Name="GroupData2" BorderStyle="Inset" Padding="15,5,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="White" BackColor="255,37,129,216" BorderColor="White" Sides="Bottom" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item6 Ref="601" Name="DetailCaption2" BorderStyle="Inset" Padding="15,15,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="White" BackColor="255,37,129,216" BorderColor="White" Sides="Left" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item7 Ref="602" Name="DetailData2" BorderStyle="Inset" Padding="15,15,0,0,254" Font="Arial, 8.25pt" ForeColor="Black" BorderColor="Transparent" Sides="Left" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item8 Ref="603" Name="GroupFooterBackground3" BorderStyle="Inset" Padding="15,5,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="255,228,228,228" BackColor="255,109,117,129" BorderColor="White" Sides="Bottom" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item9 Ref="604" Name="DetailData3_Odd" BorderStyle="Inset" Padding="15,15,0,0,254" Font="Arial, 8.25pt" ForeColor="Black" BackColor="255,243,245,248" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item10 Ref="605" Name="TotalCaption2" BorderStyle="Inset" Padding="15,5,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="255,182,186,192" Sides="None" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" />
+    <Item11 Ref="606" Name="TotalData2" BorderStyle="Inset" Padding="5,15,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="255,75,75,75" Sides="None" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" />
+    <Item12 Ref="607" Name="TotalBackground2" BorderStyle="Inset" BackColor="255,243,245,248" BorderColor="White" Sides="Bottom" StringFormat="Near;Near;0;None;Character;GenericDefault" BorderWidthSerializable="2" />
+    <Item13 Ref="608" Name="GrandTotalCaption2" BorderStyle="Inset" Padding="15,5,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="Silver" Sides="None" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" />
+    <Item14 Ref="609" Name="GrandTotalData2" BorderStyle="Inset" Padding="5,15,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="White" Sides="None" StringFormat="Near;Center;0;None;Character;GenericDefault" TextAlignment="MiddleLeft" />
+    <Item15 Ref="610" Name="GrandTotalBackground2" BorderStyle="Inset" BackColor="255,23,104,196" BorderColor="White" Sides="Bottom" StringFormat="Near;Near;0;None;Character;GenericDefault" BorderWidthSerializable="2" />
+    <Item16 Ref="611" Name="PageInfo" BorderStyle="Inset" Padding="5,5,0,0,254" Font="Arial, 8.25pt, style=Bold" ForeColor="255,64,70,80" StringFormat="Near;Near;0;None;Character;GenericDefault" />
+  </StyleSheet>
+  <ParameterPanelLayoutItems>
+    <Item1 Ref="612" LayoutItemType="Parameter" Parameter="#Ref-7" />
+  </ParameterPanelLayoutItems>
+  <ComponentStorage>
+    <Item1 Ref="0" Name="collectionDataSource1" ObjectTypeName="QPMS.Module.BusinessObjects.Project" ObjectType="DevExpress.Persistent.Base.ReportsV2.CollectionDataSource,DevExpress.Persistent.Base.v25.1" TopReturnedRecords="0">
+      <Sorting Ref="613" />
+    </Item1>
+  </ComponentStorage>
+  <ObjectStorage>
+    <Item1 Ref="5" ObjectType="DevExpress.XtraReports.Parameters.DynamicListLookUpSettings, DevExpress.Printing.v25.1.Core" DataSource="#Ref-0" ValueMember="Oid" DisplayMember="Name" SortOrder="Descending" />
+    <Item2 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v25.1" Ref="6" Content="System.Guid" Type="System.Type" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>
